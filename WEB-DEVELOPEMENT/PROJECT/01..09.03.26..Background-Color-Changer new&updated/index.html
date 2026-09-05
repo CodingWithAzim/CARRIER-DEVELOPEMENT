@@ -11,20 +11,30 @@
 
   <body>
     <main class="main">
-
       <div class="app-card">
-
         <div class="top">
           <span class="small-title">COLOR STUDIO</span>
 
-          <h1>Gradient Generator</h1>
+          <h1>radient Generator</h1>
 
           <p>Create your perfect background</p>
         </div>
 
         <div class="buttonDiv">
-          <button class="buttonOne">#5B06D2</button>
-          <button class="buttonTwo">#34BC59</button>
+          <div class="colorControl">
+            <span>CHANGE LEFT COLOR</span>
+            <button class="buttonOne">#5B06D2</button>
+          </div>
+
+          <div class="colorControl">
+            <span>CHANGE BOTH COLOR</span>
+            <button class="buttonTwo">#34BC59</button>
+          </div>
+
+          <div class="colorControl">
+            <span>CHANGE RIGHT COLOR</span>
+            <button class="buttonThree">#49EE7A</button>
+          </div>
         </div>
 
         <div class="copyText">
@@ -32,20 +42,15 @@
         </div>
 
         <div class="showColor">
-          background-image: linear-gradient(
-          to right,
-          rgb(91, 6, 210),
-          rgb(52, 188, 89)
-          );
+          background-image: linear-gradient( to right, rgb(91, 6, 210), rgb(52,
+          188, 89) );
         </div>
 
         <div class="bottom">
           <span class="dot"></span>
           Click a color to generate
         </div>
-
       </div>
-
     </main>
 
     <script src="script.js"></script>
