@@ -1,0 +1,366 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+    width: 1264.5px;
+    padding: 0 40px;
+    margin: 0 auto;
+    background-color: #000001;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    font-family: "Exo 2", sans-serif; 
+}
+.line{
+    border-bottom: 1px solid;
+
+    border-image: linear-gradient(to right, 
+        rgba(255, 77, 77, 1) 16.66%, rgba(255, 77, 77, 0.092) 33.33%,
+        rgba(46, 204, 154, 0.037) 33.33%, rgb(248, 252, 1) 50%, rgba(46, 204, 112, 0.048) 66.66%,
+        rgba(52, 152, 219, 0.178) 66.66%, rgb(25, 0, 255) 83.33%
+        ) 1;
+}
+.line2{
+    border-bottom: 1px solid;
+
+    border-image: linear-gradient(to right, 
+    rgba(0, 220, 254, 0) 0%, 
+    rgb(0, 220, 254) 50%, 
+    rgba(0, 220, 254, 0) 100% 
+    ) 1;
+}
+a{
+    text-decoration: none;
+}
+
+/* 
+    font-family: "Exo 2", sans-serif; 
+    font-family: "Orbitron", sans-serif;
+*/
+
+   /*--================>>>>>>>>>>>>>>>{Nvbar Part start}>>>>>>>>>>>>>==================--*/
+
+    #navbar .contant{
+        display: flex;
+        justify-content: space-between;
+        padding: 40px 0;
+    }
+    #navbar .contant .logo h1{
+        font-family: "Orbitron", sans-serif;
+    }
+    #navbar .contant .logo a{
+        color: #FFFFFF;
+    }
+    #navbar .contant .menu{
+        padding-top: 12px;
+    }
+    #navbar .contant .menu ul{
+        display: flex;
+        column-gap: 60px;
+    }
+    #navbar .contant .menu ul li{
+        list-style: none;
+    }
+    #navbar .contant .menu ul li a{
+        color: #FFFFFF;
+        text-transform: uppercase;
+    }
+    #navbar .contant .menu ul li .active{
+        color: #c36feffb;
+    }
+    #navbar .contant .menu ul li a:hover{
+        color: #c36feffb;
+    }
+    #navbar .contant .link{
+        display: flex;
+        column-gap: 15px;
+        align-items: center;
+    }
+    #navbar .contant .link .socil_link{
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        background-color: #FFFFFF;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #navbar .contant .link .socil_link:hover{
+        box-shadow: 0 0 10px #FFFFFF;
+     }
+    #navbar .contant .link .socil_link a{
+        color: #000000;
+        
+    }
+    #navbar .contant .link .socil_link a:hover{
+        color: #6F00A9;
+    }
+
+   /*--================>>>>>>>>>>>>>>>{Nvbar Part end}>>>>>>>>>>>>>==================--*/
+
+   /*--================>>>>>>>>>>>>>>>{Banner Part start}>>>>>>>>>>>>>==================--*/
+
+    #banner .contant{
+        display: flex;
+        justify-content: space-between;
+        padding-top: 90px;
+    }
+    #banner .contant .text{
+        width: 50%;
+        color: #FFFFFF;
+        padding-top: 30px;
+    }
+    #banner .contant .text h4{
+        width: 125px;
+        text-transform: uppercase;
+        font-size: 18px;
+        font-weight: 400;
+        padding-bottom: 10px;
+    }
+    #banner .contant .text h1{
+        font-size: 80px;
+        font-weight: 700;
+        line-height: 70px;
+        padding: 20px 0;
+        text-transform: uppercase;
+    }
+    #banner .contant .text p{
+        font-size: 18px;
+        font-weight: 400;
+        padding-bottom: 20px;
+    }
+    #banner .contant .text .btn button{
+        padding: 10px 0;
+        background-color: #6F00A9;
+        border: 0;
+        border-radius: 2px;
+    }
+    #banner .contant .text .btn button a{
+        color: #FFFFFF;
+        font-size: 20px;
+        font-weight: 400;
+        padding: 15px 60px;
+        font-family: "Orbitron", sans-serif;
+    }
+    #banner .contant .text .btn button a:hover{
+        text-shadow: 0 0 20px #ffffff;
+    }
+    #banner .contant .image{
+        width: 50%;
+    }
+    #banner .contant .image img{
+        width: 580px;
+    }
+
+   /*--================>>>>>>>>>>>>>>>{Banner Part end}>>>>>>>>>>>>>==================--*/
+
+   /*--================>>>>>>>>>>>>>>>{About Part start}>>>>>>>>>>>>>==================--*/
+    #about .contant{
+        padding: 100px 0;
+        color: #FFFFFF;
+        text-align: center;
+    }
+    #about .contant .text{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    #about .contant .text h1{
+        width: 330px;
+        font-size: 60px;
+        font-weight: 700;
+        padding-bottom: 10px;
+    }
+    #about .contant .text p{
+        width: 830px;
+        padding: 20px 0 60px 0;
+        line-height: 40px;
+        letter-spacing: -2%;
+    }
+    #about .contant .link{
+        display: flex;
+        justify-content: center;
+    }
+    #about .contant .link h4{
+        font-family: "Orbitron", sans-serif;
+        cursor: pointer;
+    }
+    #about .contant .link h4:hover{
+        box-shadow: 0 0 10px #ffffff;
+        border-radius: 20px;
+    }
+    #about .contant .link img{
+        padding: 0 20px;
+    }
+
+   /*--================>>>>>>>>>>>>>>>{About Part end}>>>>>>>>>>>>>==================--*/
+
+   /*--================>>>>>>>>>>>>>>>{Edit Part start}>>>>>>>>>>>>>==================--*/
+    #edit .contant{
+        padding: 100px 0;
+        color: #FFFFFF;
+    }
+    #edit .contant .header{
+        padding-bottom: 70px;
+    }
+    #edit .contant .header h1{
+        width: 450px;
+        font-size: 60px;
+        font-weight: 700;
+        padding-bottom: 10px;
+        text-transform: uppercase;
+    }
+    #edit .contant .footer{
+        display: flex;
+        justify-content: space-between;
+    }
+    #edit .contant .footer .image img{
+        border: 1px solid #ffffff45;
+        border-radius: 2px;
+    }
+    #edit .contant .footer .image img:hover{
+        box-shadow: 2px 2px 10px #ffffff71;
+    }
+    #edit .contant .footer .image .text{
+        padding-top: 18px;
+        text-align: center;
+    }
+    #edit .contant .footer .image .text h2{
+        text-transform: uppercase;
+        font-size: 30px;
+    }
+
+   /*--================>>>>>>>>>>>>>>>{Edit Part end}>>>>>>>>>>>>>==================--*/
+
+   /*--================>>>>>>>>>>>>>>>{Testimonials Part start}>>>>>>>>>>>>>==================--*/
+
+    #testimonial .contant{
+        padding: 100px 0;
+        color: #FFFFFF;
+    }
+    #testimonial .contant .header{
+        padding-bottom: 70px;
+        display: flex;
+        justify-content: center;
+    }
+    #testimonial .contant .header h1{
+        width: 450px;
+        font-size: 60px;
+        font-weight: 700;
+        padding-bottom: 10px;
+        text-transform: uppercase;
+    }
+    #testimonial .contant .footer{
+        padding: 0 50px;
+        display: flex;
+        justify-content: space-between;
+    }
+    #testimonial .contant .footer .card{
+        width: 30%;
+        padding: 100px 50px;
+        background-color: #6F00A9;
+        text-align: center;
+        border-radius: 2px;
+        transition: 0.5s;
+    }
+    #testimonial .contant .footer .card:hover{
+        box-shadow: 1px 2px 6px #ffffffc0;
+    }
+    #testimonial .contant .footer .card h2{
+        font-size: 40px;
+        text-transform: uppercase;
+    }
+    #testimonial .contant .footer .card span{
+        display: block;
+        padding: 20px 0;
+        font-size: 20px;
+        font-weight: 400;
+        text-transform: initial;
+    }
+    #testimonial .contant .footer .card p{
+        font-size: 20px;
+        font-weight: 400;
+        text-transform: capitalize;
+    }
+
+   /*--================>>>>>>>>>>>>>>>{Testimonials Part end}>>>>>>>>>>>>>==================--*/
+
+   /*--================>>>>>>>>>>>>>>>{Footer Part start}>>>>>>>>>>>>>==================--*/
+    #footer .contant{
+        padding: 100px 0;
+        color: #FFFFFF;
+        display: flex;
+    }
+    #footer .contant .text{
+        width: 80%;
+    }
+    #footer .contant .text .top h1{
+        width: 690px;
+        font-size: 50px;
+        font-weight: 700;
+        padding-bottom: 10px;
+        text-transform: uppercase;
+    }
+    #footer .contant .text .middle{
+        padding: 60px 0;
+    }
+    #footer .contant .text .middle label{
+        font-size: 20px;
+    }
+    #footer .contant .text .middle input{
+        text-align: center;
+        background-color: #00000000;
+        border: 1px solid #ffffff11;
+        border-radius: 2px;
+        padding: 10px 0;
+        color: #FFFFFF;
+    }
+    #footer .contant .text .middle button{
+        padding: 10px;
+        border: 0px;
+        background-color: #6F00A9;
+        border-radius: 2px;
+    }
+    #footer .contant .text .middle button a{
+        padding: 10px 40px;
+        color: #FFFFFF;
+    }
+    #footer .contant .text .bottom{
+        display: flex;
+    }
+    #footer .contant .text .bottom .location{
+        display: flex;
+        padding-right: 30px;
+    }
+    #footer .contant .text .bottom .location i{
+        color: #6F00A9;
+        font-size: 20px;
+    }
+    #footer .contant .text .bottom .location p{
+        padding: 0 15px;
+        text-transform: capitalize;
+    }
+    #footer .contant .go_back{
+        width: 20%;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        transform: rotate(270deg);
+    }
+    #footer .contant .go_back a{
+        color: #FFFFFF;
+    }
+    #footer .contant .go_back i{
+        padding-top: 5px;
+    }
+
+   /*--================>>>>>>>>>>>>>>>{Footer Part end}>>>>>>>>>>>>>==================--*/
+

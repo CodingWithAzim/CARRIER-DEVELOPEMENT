@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class21(Homework)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          keyframes: {
+            upDown: {
+              '0%, 100%': { transform: 'translateY(0)' },
+              '50%': { transform: 'translateY(-6px)' }
+            }
+          },
+          animation: {
+            'pure-up-down': 'upDown 2s ease-in-out infinite'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-slate-900 flex items-center justify-center min-h-screen p-4 text-slate-100">
+    
+
+<div class="flex flex-col gap-y-36">
+
+<!-- ========================================={Homework01}=============================================== -->
+
+     <div class="flex flex-col justify-center items-center p-8 rounded-2xl w-full max-w-md border border-slate-700 shadow-[0px_0px_10px_#fff] animate-pure-up-down">
+
+        <!-- ======{header part start}====== -->    
+        <h3 class="text-2xl font-bold text-center mb-2 text-slate-400">Class21(Homework01)</h3>
+        <h2 class="text-2xl font-bold text-center mb-2 text[#90CAF9]">MERN Stack Course</h2>
+        <p class="text-sm text-center text-slate-400 mb-6">Check your eligibility for the free course</p>
+        <!-- ======{header part end}====== -->
+
+        <!-- ======{from part start}====== -->
+        <div class="space-y-4">
+            <label class="flex items-center space-x-3 bg-slate-750 p-3 rounded-lg border border-slate-700 cursor-pointer hover:bg-slate-700 transition">
+                <input type="checkbox" id="laptop" class="w-5 h-5 accent-cyan-500 rounded">
+                <span>1. Do you have a laptop?</span>
+            </label>
+
+            <label class="flex items-center space-x-3 bg-slate-750 p-3 rounded-lg border border-slate-700 cursor-pointer hover:bg-slate-700 transition">
+                <input type="checkbox" id="hsc" class="w-5 h-5 accent-cyan-500 rounded">
+                <span>2. Do you have an HSC certificate?</span>
+            </label>
+
+            <label class="flex items-center space-x-3 bg-slate-750 p-3 rounded-lg border border-slate-700 cursor-pointer hover:bg-slate-700 transition">
+                <input type="checkbox" id="time" class="w-5 h-5 accent-cyan-500 rounded">
+                <span>3. Can you dedicate 6 hours daily?</span>
+            </label>
+
+            <label class="flex items-center space-x-3 bg-slate-750 p-3 rounded-lg border border-slate-700 cursor-pointer hover:bg-slate-700 transition">
+                <input type="checkbox" id="commitment" class="w-5 h-5 accent-cyan-500 rounded">
+                <span>4. Will you complete the course till the end?</span>
+            </label>
+        </div>
+        <!-- ======{from part end}====== -->
+
+        <!-- ======{button start}====== -->
+        <button onclick="takethecourse()" class="w-full mt-6 bg-cyan-500 hover:bg-cyan-400 text-[#000000] font-bold py-3 rounded-xl transition duration-200">
+        Take the course
+        </button>
+        <!-- ======{button end}====== -->
+    </div>  
+
+
+    
+<!-- ========================================={Homework02}=============================================== -->
+
+    <div class="p-8 rounded-2xl w-full max-w-md border border-slate-700 shadow-[0px_0px_10px_#fff] animate-pure-up-down">
+
+        <!-- ======{header part start}====== -->    
+        <h3 class="text-2xl font-bold text-center mb-2 text-slate-400">Class21(Homework02)</h3>
+        <h2 class="text-2xl font-bold text-center mb-2 text[#90CAF9]">Library Book Issuing Portal</h2>
+        <p class="text-sm text-center text-slate-400 mb-6">Please fulfill the conditions below to check your eligibility</p>
+        <!-- ======{header part end}====== -->
+
+        <!-- ======{from part start}====== -->
+        <div class="space-y-4">
+            <label class="flex items-center justify-between space-x-3 bg-slate-750 p-3 rounded-lg border border-slate-700 cursor-pointer hover:bg-slate-700 transition">
+                <span>1. Are you registered with the library?</span>
+                <input type="checkbox" id="reg" class="w-5 h-5 accent-cyan-500 rounded">
+            </label>
+
+            <label class="flex items-center justify-between space-x-3 bg-slate-750 p-3 rounded-lg border border-slate-700 cursor-pointer hover:bg-slate-700 transition">
+                <span>2. Have you deposited the specific security amount (refundable)?</span>
+                <input type="checkbox" id="refund" class="w-7 h-7 accent-cyan-500 rounded-fill">
+            </label>
+
+            <label class="flex items-center justify-between space-x-3 bg-slate-750 p-3 rounded-lg border border-slate-700 cursor-pointer hover:bg-slate-700 transition">
+                <span>3. Do you agree to return the books on time?</span>
+                <input type="checkbox" id="timeoo" class="w-5 h-5 accent-cyan-500 rounded">
+            </label>
+        </div>
+        <!-- ======{from part end}====== -->
+
+        <!-- ======{button start}====== -->
+        <button onclick="LibraryEligibility()" class="w-full mt-6 bg-cyan-500 hover:bg-cyan-400 text-[#000000] font-bold py-3 rounded-xl transition duration-200">
+            Check Eligibility
+        </button>
+        <!-- ======{button end}====== -->
+    </div>    
+
+<!-- ========================================={Homework03}=============================================== -->
+
+    <div class="p-8 rounded-2xl w-full max-w-md border border-slate-700 shadow-[0px_0px_10px_#fff] animate-pure-up-down">
+
+        <!-- ======{header part start}====== --> 
+        <div class="p-8 rounded-2xl shadow-xl text-center">
+        <h3 class="text-2xl font-bold text-center mb-2 text-slate-400">Class21(Homework03)</h3>
+        <h2 class="text-2xl font-bold text-center mb-2 text[#90CAF9]">Vowel & Consonant Checker</h2>
+        <p class="text-sm text-center text-slate-400 mb-6">Type any English letter and check</p>
+        <!-- ======{header part end}====== -->
+
+        <!-- ======{from part start}====== -->
+        <input type="text" id="charInput" maxlength="1" placeholder="Type a letter"
+            class="bg-[#000000] w-full px-4 py-3 border-[1.5px] border-[#fff] rounded-xl text-center text-xl text-[#fff] font-semibold focus:outline-none focus:border-pink-400 transition mb-4">
+        <!-- ======{from part end}====== -->
+
+        <!-- ======{button start}====== -->
+        <button onclick="checkLetter()" 
+            class="w-full bg-pink-500 hover:bg-pink-600 text-white font-bold py-3 px-4 rounded-xl shadow-md transition transform active:scale-95 cursor-pointer">
+            Check Now
+        </button>
+        <!-- ======{button end}====== -->
+
+    </div>
+
+
+    </div>
+
+</div>
+    
+
+<script src="./script.js"></script>
+</body>
+</html>
