@@ -1,0 +1,145 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+.container{
+    width: 1170px;
+    margin: 0 auto;
+}
+/*------------------- Topbar_start ---------------*/
+.main{
+    padding-bottom: 50px;
+}
+.nav{
+    display: flex;
+}
+.nav_1{
+    width: 270px;
+}
+.nav_2{
+    width: 900px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 0.5px solid #b5b1fb;
+    padding-bottom: 7px;
+    align-items: flex-end;
+}
+/*--------------------- banner_start -------------------*/
+.banner{
+    width: 1170px;
+    display: flex;
+}
+.con01{
+    padding-right: 50px;
+    width: 220px;
+    display: flex;
+    border-bottom: 0.5px solid #b5b1fb;
+    padding-bottom: 7px;
+}
+.hide{
+    padding-left: 12px;
+}
+.hide p{
+    background-color: #b5b1fb;
+    padding: 2px 4px;
+    border-radius: 5px;
+}
+.con_link h3{
+    padding: 7px 7px 7px 0;
+}
+.link_part a p{
+    padding: 2px 0;
+}
+.ancor{
+    padding-left: 25px;
+}
+.banner_right{
+    padding-left: 50px;
+    width: 900px;
+}
+.art{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 0.5px solid #b5b1fb;
+    padding-top: 7px;
+}
+.art_1 ul{
+    display: flex;
+}
+.art_1 ul li{
+    list-style: none;
+}
+.und{
+    border-bottom: 2px solid black;
+    padding-bottom: 7px;
+}
+.talk{
+    padding-left: 17px;
+}
+.art_2 ul{
+    display: flex;
+}
+.read{
+    border-bottom: 2px solid black;
+    padding: 0 0 7px 0;
+}
+.tools{
+    display: flex;
+    padding-left: 17px;
+}
+.tools li{
+    padding-left: 17px;
+}
+.art_2 ul li{
+    list-style: none;
+}
+.pragraph{
+    width: 900px;
+    display: flex;
+    padding-top: 10px;
+}
+span{
+    color: #0f93f9;
+}
+.prag_1{
+    width: 550px;
+}
+.prag_1 .p1{
+    padding-bottom: 25px;
+}
+.prag_1 .p2{
+    font-size: 20px;
+    padding-bottom: 7px;
+}
+.prag_1 .p3{
+    font-size: 20px;
+}
+.prag_2{
+    padding-left: 20px;
+}
+.chakbox{
+    display: flex;
+    justify-content: flex-end;
+    padding-bottom: 25px;
+}
+.chakbox input{
+    accent-color: black;
+}
+.posi{
+    width: 242px;
+    height: 450px;
+    background-color: #e1e7e5;
+    padding-top: 8px;
+    border: 0.5px solid #50655e;
+}
+.img_1{
+    display: flex;
+    justify-content: center;
+}
+.img_1 img{
+    width: 230px;
+    height: 370px;
+    border: 0.5px solid #586d66;
+}

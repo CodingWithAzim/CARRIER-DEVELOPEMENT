@@ -1,0 +1,522 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.nav{
+    background-color: orangered;
+    padding: 10px 0px;
+    text-align: center;
+}
+.wrapper{
+    width: 100%;
+    height: 100vh;
+    background-color: #00000081;
+}
+.parent{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    
+}
+.center{
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    color: white;
+    border: 5px solid rgb(255, 191, 0);
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    animation: bliem 2s linear infinite;
+    transform: translate(-50%, -50%);
+}
+@keyframes bliem{
+    0%{
+        box-shadow: 0 0 0 0 rgba(255, 195, 7, 0.7);
+    }
+    40%{
+        box-shadow: 0 0 0 30px rgba(255, 195, 7, 0);
+    }
+    80%{
+        box-shadow: 0 0 0 50px rgba(255, 195, 7, 0);
+    }
+    100%{
+        box-shadow: 0 0 0 0 rgba(255, 195, 7, 0);
+    }
+}
+.center000{
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.child_1{
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    color: white;
+    border: 5px solid rgb(0, 0, 0);
+    border-radius: 50%;
+    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.569);
+    position: absolute;
+    left: 38%;
+    top: 27%;
+    animation: child_1 2s linear forwards;
+    transform: translate(-50%, -50%);
+}
+@keyframes child_1{
+    from{
+        left: 38%;
+        top: 27%;
+    }to{
+        left: 41%;
+        top: 34%;
+    }
+}
+.panel_1{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.child_2{
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    color: white;
+    border: 5px solid rgb(0, 0, 0);
+    border-radius: 50%;
+    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.569);
+    position: absolute;
+    left: 50%;
+    top: 15%;
+    animation: child_2 2s linear forwards;
+    transform: translate(-50%, -50%);
+}
+@keyframes child_2{
+    from{
+        left: 50%;
+        top: 15%;
+    }to{
+        left: 50%;
+        top: 25%;
+    }
+}
+.panel_2{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.child_3{
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    color: white;
+    border: 5px solid rgb(0, 0, 0);
+    border-radius: 50%;
+    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.569);
+    position: absolute;
+    left: 62%;
+    top: 26%;
+    animation: child_3 2s linear forwards;
+    transform: translate(-50%, -50%);
+}
+@keyframes child_3{
+    from{
+        left: 62%;
+        top: 26%;
+    }to{
+        left: 59%;
+        top: 34%;
+    }
+}
+.panel_3{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.child_4{
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    color: white;
+    border: 5px solid rgb(0, 0, 0);
+    border-radius: 50%;
+    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.569);
+    position: absolute;
+    left: 66%;
+    top: 53%;
+    animation: child_4 2s linear forwards;
+    transform: translate(-50%, -50%);
+}
+@keyframes child_4{
+    from{
+        left: 66%;
+        top: 53%;
+    }to{
+        left: 61%;
+        top: 55%;
+    }
+}
+.panel_4{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.child_5{
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    color: white;
+    border: 5px solid rgb(0, 0, 0);
+    border-radius: 50%;
+    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.569);
+    position: absolute;
+    left: 59%;
+    top: 78%;
+    animation: child_5 2s linear forwards;
+    transform: translate(-50%, -50%);
+}
+@keyframes child_5{
+    from{
+        left: 59%;
+        top: 78%;
+    }to{
+        left: 55%;
+        top: 73%;
+    }
+}
+.panel_5{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.child_6{
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    color: white;
+    border: 5px solid rgb(0, 0, 0);
+    border-radius: 50%;
+    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.569);
+    position: absolute;
+    left: 45%;
+    top: 81%;
+    animation: child_6 2s linear forwards;
+    transform: translate(-50%, -50%);
+}
+@keyframes child_6{
+    from{
+        left: 45%;
+        top: 81%;
+    }to{
+        left: 45.5%;
+        top: 72%;
+    }
+}
+.panel_6{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.child_7{
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    color: white;
+    border: 5px solid rgb(0, 0, 0);
+    border-radius: 50%;
+    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.569);
+    position: absolute;
+    left: 35%;
+    top: 58%;
+    animation: child_7 2s linear forwards;
+    transform: translate(-50%, -50%);
+}
+@keyframes child_7{
+    from{
+        left: 35%;
+        top: 58%;
+    }to{
+        left: 39%;
+        top: 56%;
+    }
+}
+.panel_7{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+
+.wrapper2{
+    width: 100%;
+    height: 100vh;
+    background-color: #00000081;
+}
+.parent2{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    
+}
+.center{
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    color: white;
+    border: 5px solid rgb(255, 191, 0);
+    border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    animation: bliem 2s linear infinite;
+    transform: translate(-50%, -50%);
+}
+@keyframes bliem{
+    0%{
+        box-shadow: 0 0 0 0 rgba(255, 195, 7, 0.7);
+    }
+    40%{
+        box-shadow: 0 0 0 30px rgba(255, 195, 7, 0);
+    }
+    80%{
+        box-shadow: 0 0 0 50px rgba(255, 195, 7, 0);
+    }
+    100%{
+        box-shadow: 0 0 0 0 rgba(255, 195, 7, 0);
+    }
+}
+.center000{
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.child_8{
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    color: white;
+    border: 5px solid rgb(0, 0, 0);
+    border-radius: 50%;
+    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.569);
+    position: absolute;
+    left: 38%;
+    top: 10%;
+    animation: child_8 2s linear forwards;
+    transform: translate(-50%, -50%);
+}
+@keyframes child_8{
+    from{
+        left: 38%;
+        top: 10%;
+    }to{
+        left: 41%;
+        top: 34%;
+    }
+}
+.panel_8{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.child_9{
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    color: white;
+    border: 5px solid rgb(0, 0, 0);
+    border-radius: 50%;
+    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.569);
+    position: absolute;
+    left: 50%;
+    top: 10%;
+    animation: child_9 2s linear forwards;
+    transform: translate(-50%, -50%);
+}
+@keyframes child_9{
+    from{
+        left: 50%;
+        top: 10%;
+    }to{
+        left: 50%;
+        top: 25%;
+    }
+}
+.panel_9{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.child_10{
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    color: white;
+    border: 5px solid rgb(0, 0, 0);
+    border-radius: 50%;
+    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.569);
+    position: absolute;
+    left: 62%;
+    top: 10%;
+    animation: child_10 2s linear forwards;
+    transform: translate(-50%, -50%);
+}
+@keyframes child_10{
+    from{
+        left: 62%;
+        top: 10%;
+    }to{
+        left: 59%;
+        top: 34%;
+    }
+}
+.panel_10{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.child_11{
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    color: white;
+    border: 5px solid rgb(0, 0, 0);
+    border-radius: 50%;
+    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.569);
+    position: absolute;
+    left: 66%;
+    top: 10%;
+    animation: child_11 2s linear forwards;
+    transform: translate(-50%, -50%);
+}
+@keyframes child_11{
+    from{
+        left: 66%;
+        top: 10%;
+    }to{
+        left: 61%;
+        top: 55%;
+    }
+}
+.panel_11{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.child_12{
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    color: white;
+    border: 5px solid rgb(0, 0, 0);
+    border-radius: 50%;
+    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.569);
+    position: absolute;
+    left: 59%;
+    top: 10%;
+    animation: child_12 2s linear forwards;
+    transform: translate(-50%, -50%);
+}
+@keyframes child_12{
+    from{
+        left: 59%;
+        top: 10%;
+    }to{
+        left: 55%;
+        top: 73%;
+    }
+}
+.panel_12{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.child_13{
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    color: white;
+    border: 5px solid rgb(0, 0, 0);
+    border-radius: 50%;
+    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.569);
+    position: absolute;
+    left: 45%;
+    top: 10%;
+    animation: child_13 2s linear forwards;
+    transform: translate(-50%, -50%);
+}
+@keyframes child_13{
+    from{
+        left: 45%;
+        top: 10%;
+    }to{
+        left: 45.5%;
+        top: 72%;
+    }
+}
+.panel_13{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.child_14{
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    color: white;
+    border: 5px solid rgb(0, 0, 0);
+    border-radius: 50%;
+    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.569);
+    position: absolute;
+    left: 35%;
+    top: 10%;
+    animation: child_14 2s linear forwards;
+    transform: translate(-50%, -50%);
+}
+@keyframes child_14{
+    from{
+        left: 35%;
+        top: 10%;
+    }to{
+        left: 39%;
+        top: 56%;
+    }
+}
+.panel_14{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

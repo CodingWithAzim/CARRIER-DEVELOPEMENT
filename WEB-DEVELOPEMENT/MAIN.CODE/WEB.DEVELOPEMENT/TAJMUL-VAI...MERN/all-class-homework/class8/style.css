@@ -1,0 +1,262 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+    width: 1280px;
+    margin: 0 auto;
+}
+.nav{
+    padding: 15px 0;
+    background-color: #019cdf;
+    display: flex;
+    justify-content: space-around;
+}
+.logo{
+    display: flex;
+    position: relative;
+}
+.babol{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    padding-top: rem;
+}
+img{
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+}
+span{
+    color: white;
+    position: relative;
+    animation: bable 2s linear infinite;
+    top: 0%;
+    left: 0%;
+}
+@keyframes bable{
+    from{
+        top: -10%;
+        left: -0%;
+    }to{
+        top: 0%;
+        left: 0%;
+    }
+}
+spam{
+    color: white;
+    position: relative;
+    animation: bable 2s linear infinite;
+    top: 0%;
+    left: 0%;
+}
+@keyframes bable{
+    from{
+        top: -10%;
+        left: -0%;
+    }to{
+        top: 0%;
+        left: 0%;
+    }
+}
+.bab{
+    text-decoration: none;
+    font-size: 27px;
+    font-style: italic;
+    color: black;
+    font-weight: 700;
+}
+.menu{
+    display: flex;
+
+}
+.ulone{
+    display: flex;
+    padding-top: 7px;
+    justify-content: space-around;
+}
+.li_two{
+    list-style: none;
+    padding: 0 25px;
+}
+.ancor{
+    text-decoration: none;
+    color: black;
+    font-weight: 700;
+    position: relative;
+    padding: 0 3px;
+}
+.ancor::after{
+    width: 2px;
+    height: 0%;
+    background-color: #ffffff;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    content: "";
+    transition: .5s;
+}
+.ancor:hover::after{
+    height: 100%;
+}
+.ancor::before{
+    width: 2px;
+    height: 0%;
+    background-color: #ffffff;
+    position: absolute;
+    bottom: 0;
+    right: 100%;
+    content: "";
+    transition: .5s;
+}
+.ancor:hover::before{
+    height: 100%;
+}
+.li_pos{
+    position: relative;
+}
+.dropdwon{
+    width: 100%;
+    height: 0;
+    color: rgba(255, 255, 255, 0);
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    display: none;
+}
+.li_two:hover .dropdwon{
+    height: 100%;
+    color: rgba(255, 255, 255, 0);
+    display: block;
+}
+.li_three{
+    list-style: none;
+    padding: 3px 0;
+    text-align: center;
+}
+.li_three:hover{
+    background-color: #ffffff80;
+    border-radius: 5px;
+}
+.ancor_2{
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-weight: 700;
+}
+.ancor_2:hover .li_pos{
+    color: black;
+}
+button{
+    background-color: #001c71;
+    padding: 7px 20px;
+    border: none;
+    border-radius: 5px;
+}
+button:hover{
+    background-color: #001a68b6;
+}
+button a{
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.892);
+    font-size: 15px;
+}
+.banner_ph{
+    width: 100%;
+    height: 490px;
+    background-image: url(./babol.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.content{
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+}
+p{
+    width: 300px;
+    text-align: center;
+}
+.bab_ani img{
+    width: 50px;
+    height: 50px;
+    animation: bublle 7s linear infinite;
+}
+.bab_ani{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: absolute;
+    bottom: 0;
+}
+@keyframes bublle{
+    0%{
+        transform: translateY(0);
+        opacity: 0;
+    }
+    40%{
+        opacity: 1;
+    }
+    70%{
+        opacity: 1;
+    }
+    100%{
+        transform: translateY(-75vh);
+        opacity: 0;
+    }
+}
+.bab_ani img:nth-child(1){
+    animation-delay: 2s;
+    width: 25px;
+    height: 25px;
+}
+.bab_ani img:nth-child(2){
+    animation-delay: 1s;
+}
+.bab_ani img:nth-child(3){
+    animation-delay: 7s;
+    width: 24px;
+    height: 24px;
+}
+.bab_ani img:nth-child(4){
+    animation-delay: 4s;
+    width: 38px;
+    height: 38px;
+}
+.bab_ani img:nth-child(5){
+    animation-delay: 1s;
+}
+.bab_ani img:nth-child(6){
+    animation-delay: 6s;
+    width: 25px;
+    height: 25px;
+}
+.bab_ani img:nth-child(7){
+    animation-delay: 2s;
+    width: 36px;
+    height: 36px;
+}
+.bab_ani img:nth-child(8){
+    animation-delay: 4s;
+    width: 25px;
+    height: 25px;
+}
+.bab_ani img:nth-child(9){
+    animation-delay: 1s;
+    width: 30px;
+    height: 30px;
+}
+.bab_ani img:nth-child(10){
+    animation-delay: 2s;
+    width: 22px;
+    height: 22px;
+}

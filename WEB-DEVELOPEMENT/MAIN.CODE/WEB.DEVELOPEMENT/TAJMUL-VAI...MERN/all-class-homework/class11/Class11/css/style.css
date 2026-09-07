@@ -1,0 +1,251 @@
+/* -----------------<<<<<<<<<<<<{Google Fonts start}>>>>>>>>>>>>--------------------- */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* -----------------<<<<<<<<<<<<{Google Fonts end}>>>>>>>>>>>>--------------------- */
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.container{
+    width: 1250px;
+    margin: 0 auto;
+}
+
+/* -----------------<<<<<<<<<<<<{Start_Navbar}>>>>>>>>>>>>--------------------- */
+
+nav{
+    background-color: #FEF3ED;
+}
+nav .nav_contant{
+    display: flex;
+    padding: 35px 0px;
+    font-family: "Inter", sans-serif;
+}
+nav .nav_contant .logo{
+    width: 25%;
+}
+nav .nav_contant .menu{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+nav .nav_contant .menu ul{
+    display: flex;
+    column-gap: 45px;
+}
+nav .nav_contant .menu ul li{
+    list-style: none;
+}
+nav .nav_contant .menu ul li a{
+    text-decoration: none;
+    color: #7081B9;
+    font-size: 16px;
+    font-weight: 400;
+    transition: 1s;
+}
+nav .nav_contant .menu ul li a:hover{
+    color: #99a2be;
+    text-shadow: 0 0 20px #757575;
+}
+nav .nav_contant .button{
+    width: 25%;
+    text-align: end;
+}
+nav .nav_contant .button button{
+    padding: 10px 35px;
+    background-color: #fbfbfb;
+    border: 1px solid rgb(181, 180, 180);
+    border-radius: 5px;
+    transition: 1s;
+}
+nav .nav_contant .button button:hover{
+    background-color: #ebeaea;
+}
+nav .nav_contant .button a{
+    text-decoration: none;
+    color: #7081B9;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+/* -----------------<<<<<<<<<<<<{End_Navbar}>>>>>>>>>>>>--------------------- */
+
+/* -----------------<<<<<<<<<<<<{Banner Part start}>>>>>>>>>>>>--------------------- */
+
+#banner{
+    background-color: #FEF3ED;
+}
+#banner .banner_contant{
+    display: flex;
+}
+#banner .banner_contant .banner_image{
+    width: 40%;
+}
+#banner .banner_contant .banner_text{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+#banner .banner_contant .banner_text h2{
+    color: #FFC835;
+    padding-bottom: 16px;
+    font-size: 32px;
+}
+#banner .banner_contant .banner_text h1{
+    font-size: 54px;
+}
+#banner .banner_contant .banner_text .h1_padd{
+    padding-bottom: 20px;
+}
+#banner .banner_contant .banner_text button{
+    background-color: #00BCD4;
+    padding: 15px 30px;
+    border: 0px;
+    border-radius: 5px;
+    transition: 1s;
+}
+#banner .banner_contant .banner_text button:hover{
+    background-color: #62edff;
+}
+#banner .banner_contant .banner_text button a{
+    text-decoration: none;
+    color: #ffffff;
+    transition: 1s;
+}
+#banner .banner_contant .banner_text button:hover a{
+    color: #000000;
+}
+/* -----------------<<<<<<<<<<<<{Banner Part end}>>>>>>>>>>>>--------------------- */
+
+/* -----------------<<<<<<<<<<<<{About Part start}>>>>>>>>>>>>--------------------- */
+
+#about{
+    padding: 70px 0px;
+}
+#about .about_contant{
+    display: flex;
+}
+#about .about_contant .text1{
+    width: 60%;
+}
+#about .about_contant .text1 h3{
+    font-size: 24px;
+}
+#about .about_contant .text1 p{
+    width: 620px;
+    padding: 17px 0px;
+    font-size: 20px;
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+}
+#about .about_contant .text1 .socil_link{
+    display: flex;
+    column-gap: 15px;
+}
+#about .about_contant .text1 .socil_link .github{
+    width: 30px;
+    height: 30px;
+    border: 1px solid rgb(186, 186, 186);
+    border-radius: 50%;display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#about .about_contant .text1 .socil_link .github:hover{
+    background-color: #FEF3ED;
+}
+#about .about_contant .text2{
+    width: 40%;
+}
+#about .about_contant .text2 .info-container {
+  max-width: 500px;
+  margin: 10px 0;
+  font-family: "Inter", sans-serif;
+}
+#about .about_contant .text2 .info-container .info-row {
+  display: flex;
+  margin: 8px 0;
+}
+#about .about_contant .text2 .info-container .info-row .label {
+  width: 200px;
+  flex-shrink: 0;
+  font-size: 16px;
+}
+#about .about_contant .text2 .info-container .info-row .colon {
+  width: 30px;
+  flex-shrink: 0;
+  font-size: 16px;
+}
+#about .about_contant .text2 .info-container .info-row .value {
+  flex-grow: 1;
+  color: #7081B9;
+  font-size: 16px;
+}
+
+#about .about_footer{
+    padding-top: 70px;
+    display: flex;
+    justify-content: space-between;
+}
+#about .about_footer .item1{
+    padding-bottom: 25px;
+}
+#about .about_footer .item1 .text{
+    background-color: #ffffff;
+    display: flex;
+    column-gap: 15px;
+    box-shadow: 0px 4px 7px rgba(7, 7, 7, 0.276);
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 30px;
+}
+#about .about_footer .item1 .text:hover{
+    box-shadow: 0px 0px 12px rgba(7, 7, 7, 0.276);
+}
+/* -----------------<<<<<<<<<<<<{About Part end}>>>>>>>>>>>>--------------------- */
+
+/* -----------------<<<<<<<<<<<<{Services Part start}>>>>>>>>>>>>--------------------- */
+
+#services{
+    padding: 50px 0px;
+}
+#services .services_content .top{
+    text-align: center;
+    font-family: "Inter", sans-serif;
+}
+#services .services_content .top h3{
+    color: #69C380;
+}
+#services .services_content .top h1{
+    padding: 15px 0px;
+}
+#services .services_content .top p{
+    padding-bottom: 10px;
+    color: #00000059;
+}
+
+#services .services_content .bottom{
+    display: flex;
+    justify-content: space-between;
+    padding-top: 40px;
+}
+#services .services_content .bottom .card{
+    width: 30%;
+    padding: 25px;
+    box-shadow: 0 0 5px #8f8f8f;
+    font-family: "Inter", sans-serif;
+}
+#services .services_content .bottom .card h2{
+    padding: 20px 0px;
+}
+#services .services_content .bottom .card p{
+    width: 278px;
+    line-height: 2rem;
+}
+/* -----------------<<<<<<<<<<<<{Services Part end}>>>>>>>>>>>>--------------------- */
