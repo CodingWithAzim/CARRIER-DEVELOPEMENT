@@ -9,7 +9,7 @@ let showColor = document.querySelector(".showColor");
 /* =========================
    COPY CSS CODE
 ========================= */
-
+  
 showColor.addEventListener("click", () => {
   navigator.clipboard.writeText(showColor.textContent);
 
