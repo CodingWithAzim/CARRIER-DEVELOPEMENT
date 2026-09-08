@@ -1,0 +1,84 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+body {
+  background-color: rgb(246, 246, 234);
+}
+a {
+  color: rgb(2, 96, 247);
+}
+/* .container{ 
+    width: 800px;
+} */
+#sign_1 {
+  margin: 0 345px; /* jeita nise thakbe seita age pradhonno pabe */
+  margin: 0 200px;
+  padding-bottom: 40px;
+}
+.sign_top {
+  margin: 40px 0;
+}
+.sign_top h3 {
+  margin: 0 0 15px 0;
+  font-size: 25px;
+}
+.form_left {
+  margin-bottom: 30px;
+  padding: 10px;
+  font-size: 18px;
+  border-radius: 5px;
+  border: 0.1px solid rgb(149, 147, 147);
+}
+.birth {
+  padding: 9px 50px;
+}
+.sign_med {
+  display: flex;
+  justify-content: space-between;
+}
+.rem {
+  margin-bottom: 15px;
+}
+.sign_bott {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 25px;
+}
+.button {
+  display: flex;
+  justify-content: space-between;
+}
+.button button {
+  border: 0.1px solid rgb(149, 147, 147);
+  border-radius: 5px;
+}
+
+.button .butt_1 {
+  padding: 11px 80px;
+  background-color: rgb(2, 96, 247);
+}
+.button .butt_2 {
+  padding: 11px 55px;
+  background-color: rgb(0, 0, 0);
+}
+.button button a {
+  color: white;
+  padding-bottom: 10px;
+}
+.button button img {
+  width: 13px;
+}
+.pra p {
+  margin: 20px 0 80px 0;
+  text-align: center;
+}
+.img {
+  display: flex;
+}
+.img img {
+  padding-right: 20px;
+  width: 150px;
+}
