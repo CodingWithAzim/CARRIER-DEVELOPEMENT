@@ -8,19 +8,19 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-} 
- 
+}
+
 /* =========================
    BODY
 ========================= */
 
-body { 
-  min-height: 100vh;
+body {
+  min-height: 100vh; /* আমার height কমপক্ষে 100vh হবে, দরকার হলে আরও বড় হব। */
 
   font-family: "Inter", sans-serif;
 
   color: #f8fafc;
- 
+
   background:
     radial-gradient(
       circle at 10% 15%,
@@ -28,11 +28,12 @@ body {
       transparent 28%
     ),
     radial-gradient(
-      circle at 90% 85%,
+      circle at 80% 75%,
       rgba(6, 182, 212, 0.25),
       transparent 30%
     ),
     linear-gradient(135deg, #17133a, #0d2330);
+  /* background-color: red; */
 
   overflow-x: hidden;
 }
@@ -41,8 +42,8 @@ body {
 ========================= */
 
 .main {
-  width: 100%;
-  min-height: 100vh;
+  width: 100%; /* এখানে .main হলো body-এর ভেতরের একটা element। .main, তার parent body-এর পুরো available width নাও। */
+  min-height: 100vh; /*.main-কে কমপক্ষে পুরো screen-এর height দেয়, যাতে app-card-কে screen-এর মাঝখানে রাখা যায়।*/
 
   display: flex;
 
@@ -64,6 +65,7 @@ body {
   padding: 42px;
 
   border: 1px solid rgba(255, 255, 255, 0.22);
+  /* border: 2px solid red; */
 
   border-radius: 28px;
 
@@ -72,10 +74,10 @@ body {
     rgba(255, 255, 255, 0.13),
     rgba(255, 255, 255, 0.055)
   );
+  /* filter: blur(20px); */
+  /* backdrop-filter: blur(20px);
 
-  backdrop-filter: blur(25px);
-
-  -webkit-backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px); */
 
   box-shadow:
     0 30px 80px rgba(0, 0, 0, 0.4),
