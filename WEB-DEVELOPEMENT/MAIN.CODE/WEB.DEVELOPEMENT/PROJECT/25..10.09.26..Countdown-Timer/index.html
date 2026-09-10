@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Countdown Timer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="card">
+    <span class="eyebrow">Time challenge</span>
+    <h1>Countdown Timer</h1>
+
+    <label for="secondsInput">Seconds</label>
+    <div class="input-row">
+      <input id="secondsInput" type="number" min="1" value="30">
+      <button id="set">Set</button>
+    </div>
+
+    <div id="display" class="display">00:30</div>
+
+    <div class="controls">
+      <button id="start">Start</button>
+      <button id="pause">Pause</button>
+      <button id="reset">Reset</button>
+    </div>
+
+    <p id="message" class="message">Set a time and press Start.</p>
+  </main>
+
+  <script>
+    const input = document.querySelector("#secondsInput");
+    const display = document.querySelector("#display");
+    const message = document.querySelector("#message");
+
+    let totalSeconds = Number(input.value);
+    let timerId = null;
+
+    function render() {
+      const minutes = Math.floor(totalSeconds / 60);
+      const seconds = totalSeconds % 60;
+      display.textContent =
+        String(minutes).padStart(2, "0") + ":" +
+        String(seconds).padStart(2, "0");
+    }
+
+    document.querySelector("#set").addEventListener("click", () => {
+      clearInterval(timerId);
+      timerId = null;
+      totalSeconds = Math.max(1, Number(input.value) || 1);
+      message.textContent = "Timer is ready.";
+      render();
+    });
+
+    document.querySelector("#start").addEventListener("click", () => {
+      if (timerId !== null || totalSeconds <= 0) return;
+
+      message.textContent = "Counting down...";
+
+      timerId = setInterval(() => {
+        totalSeconds--;
+        render();
+
+        if (totalSeconds <= 0) {
+          clearInterval(timerId);
+          timerId = null;
+          message.textContent = "Time is up!";
+        }
+      }, 1000);
+    });
+
+    document.querySelector("#pause").addEventListener("click", () => {
+      clearInterval(timerId);
+      timerId = null;
+      message.textContent = "Paused.";
+    });
+
+    document.querySelector("#reset").addEventListener("click", () => {
+      clearInterval(timerId);
+      timerId = null;
+      totalSeconds = Math.max(1, Number(input.value) || 1);
+      message.textContent = "Timer reset.";
+      render();
+    });
+
+    render();
+  </script>
+</body>
+</html>

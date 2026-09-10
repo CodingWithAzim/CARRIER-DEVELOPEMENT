@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Age Calculator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="card">
+    <span class="eyebrow">JavaScript Beginner</span>
+    <h1>Age Calculator</h1>
+    <p class="muted">Enter your date of birth.</p>
+
+    <label for="birthDate">Date of birth</label>
+    <input id="birthDate" type="date">
+
+    <button id="calculate">Calculate age</button>
+
+    <div id="result" class="result">Your age will appear here.</div>
+  </main>
+
+  <script>
+    const birthDate = document.querySelector("#birthDate");
+    const result = document.querySelector("#result");
+
+    document.querySelector("#calculate").addEventListener("click", () => {
+      if (!birthDate.value) {
+        result.textContent = "Please choose your date of birth.";
+        return;
+      }
+
+      const birth = new Date(birthDate.value + "T00:00:00");
+      const today = new Date();
+
+      if (birth > today) {
+        result.textContent = "Please choose a valid past date.";
+        return;
+      }
+
+      let years = today.getFullYear() - birth.getFullYear();
+      let months = today.getMonth() - birth.getMonth();
+      let days = today.getDate() - birth.getDate();
+
+      if (days < 0) {
+        months--;
+        const previousMonthDays = new Date(
+          today.getFullYear(),
+          today.getMonth(),
+          0
+        ).getDate();
+        days += previousMonthDays;
+      }
+
+      if (months < 0) {
+        years--;
+        months += 12;
+      }
+
+      result.innerHTML =
+        "<strong>" + years + "</strong> years, " +
+        "<strong>" + months + "</strong> months, and " +
+        "<strong>" + days + "</strong> days old.";
+    });
+  </script>
+</body>
+</html>

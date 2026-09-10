@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Random Quote Generator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="card">
+    <span class="eyebrow">Daily inspiration</span>
+    <h1>Random Quote</h1>
+
+    <blockquote id="quote">
+      Press the button to get a quote.
+    </blockquote>
+    <p id="author" class="author"></p>
+
+    <button id="newQuote">New Quote</button>
+  </main>
+
+  <script>
+    const quotes = [
+      { text: "Start before you feel ready.", author: "Unknown" },
+      { text: "Small steps become big progress.", author: "Unknown" },
+      { text: "Practice turns knowledge into skill.", author: "Unknown" },
+      { text: "Make it work, then make it better.", author: "Unknown" },
+      { text: "Consistency beats occasional intensity.", author: "Unknown" }
+    ];
+
+    const quoteEl = document.querySelector("#quote");
+    const authorEl = document.querySelector("#author");
+
+    function showRandomQuote() {
+      const randomIndex = Math.floor(Math.random() * quotes.length);
+      const quote = quotes[randomIndex];
+
+      quoteEl.textContent = "“" + quote.text + "”";
+      authorEl.textContent = "— " + quote.author;
+    }
+
+    document.querySelector("#newQuote").addEventListener("click", showRandomQuote);
+    showRandomQuote();
+  </script>
+</body>
+</html>

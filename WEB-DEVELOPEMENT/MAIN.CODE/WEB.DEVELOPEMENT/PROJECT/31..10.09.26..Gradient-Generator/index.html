@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gradient Generator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body id="page">
+  <main class="card">
+    <span class="eyebrow">JavaScript + CSS</span>
+    <h1>Gradient Generator</h1>
+
+    <div id="preview" class="preview"></div>
+
+    <div class="fields">
+      <label>
+        First color
+        <input id="color1" type="color" value="#4F46E5">
+      </label>
+      <label>
+        Second color
+        <input id="color2" type="color" value="#06B6D4">
+      </label>
+      <label>
+        Angle
+        <input id="angle" type="range" min="0" max="360" value="135">
+        <span id="angleValue">135°</span>
+      </label>
+    </div>
+
+    <div class="output">
+      <code id="code">linear-gradient(135deg, #4F46E5, #06B6D4)</code>
+    </div>
+
+    <button id="copy">Copy CSS</button>
+  </main>
+
+  <script>
+    const preview = document.querySelector("#preview");
+    const color1 = document.querySelector("#color1");
+    const color2 = document.querySelector("#color2");
+    const angle = document.querySelector("#angle");
+    const angleValue = document.querySelector("#angleValue");
+    const code = document.querySelector("#code");
+
+    function updateGradient() {
+      const value =
+        "linear-gradient(" + angle.value + "deg, " +
+        color1.value + ", " + color2.value + ")";
+
+      preview.style.background = value;
+      code.textContent = value;
+      angleValue.textContent = angle.value + "°";
+    }
+
+    [color1, color2, angle].forEach(input => {
+      input.addEventListener("input", updateGradient);
+    });
+
+    document.querySelector("#copy").addEventListener("click", async () => {
+      try {
+        await navigator.clipboard.writeText("background: " + code.textContent + ";");
+        document.querySelector("#copy").textContent = "Copied!";
+        setTimeout(() => {
+          document.querySelector("#copy").textContent = "Copy CSS";
+        }, 1200);
+      } catch {
+        document.querySelector("#copy").textContent = "Copy failed";
+      }
+    });
+
+    updateGradient();
+  </script>
+</body>
+</html>

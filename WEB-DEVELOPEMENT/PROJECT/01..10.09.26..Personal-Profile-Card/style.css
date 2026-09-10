@@ -1,0 +1,90 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background: #f2f4f7;
+}
+ 
+.profile-card { 
+  width: 100%;
+  max-width: 360px;
+  padding: 30px 25px;
+  text-align: center;
+  background: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+.profile-image {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 18px;
+}
+
+.avatar {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  font-size: 42px;
+  font-weight: bold;
+  color: #ffffff;
+  background: #2563eb;
+}
+
+h1 {
+  margin-bottom: 6px;
+  font-size: 28px;
+  color: #111827;
+}
+
+.role {
+  margin-bottom: 15px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #2563eb;
+}
+
+.bio {
+  margin-bottom: 22px;
+  line-height: 1.6;
+  font-size: 15px;
+  color: #4b5563;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  padding: 11px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.primary {
+  color: #ffffff;
+  background: #2563eb;
+}
+
+.secondary {
+  color: #2563eb;
+  background: #e8efff;
+}

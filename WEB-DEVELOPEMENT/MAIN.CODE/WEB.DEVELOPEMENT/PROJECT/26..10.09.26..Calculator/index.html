@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="calculator">
+    <div class="screen" id="screen">0</div>
+
+    <div class="keys">
+      <button class="action" data-value="C">C</button>
+      <button class="action" data-value="DEL">DEL</button>
+      <button class="operator" data-value="/">÷</button>
+      <button class="operator" data-value="*">×</button>
+
+      <button data-value="7">7</button>
+      <button data-value="8">8</button>
+      <button data-value="9">9</button>
+      <button class="operator" data-value="-">−</button>
+
+      <button data-value="4">4</button>
+      <button data-value="5">5</button>
+      <button data-value="6">6</button>
+      <button class="operator" data-value="+">+</button>
+
+      <button data-value="1">1</button>
+      <button data-value="2">2</button>
+      <button data-value="3">3</button>
+      <button class="equal" data-value="=">=</button>
+
+      <button class="zero" data-value="0">0</button>
+      <button data-value=".">.</button>
+    </div>
+  </main>
+
+  <script>
+    const screen = document.querySelector("#screen");
+    let expression = "";
+
+    function render() {
+      screen.textContent = expression || "0";
+    }
+
+    function calculate() {
+      if (!expression) return;
+
+      if (!/^[0-9+*/.()\-\s]+$/.test(expression)) {
+        screen.textContent = "Error";
+        expression = "";
+        return;
+      }
+
+      try {
+        const result = Function("return (" + expression + ")")();
+        if (!Number.isFinite(result)) throw new Error();
+        expression = String(result);
+        render();
+      } catch {
+        screen.textContent = "Error";
+        expression = "";
+      }
+    }
+
+    document.querySelector(".keys").addEventListener("click", (event) => {
+      const button = event.target.closest("button");
+      if (!button) return;
+
+      const value = button.dataset.value;
+
+      if (value === "C") {
+        expression = "";
+      } else if (value === "DEL") {
+        expression = expression.slice(0, -1);
+      } else if (value === "=") {
+        calculate();
+        return;
+      } else {
+        expression += value;
+      }
+
+      render();
+    });
+
+    document.addEventListener("keydown", (event) => {
+      const allowed = "0123456789+-*/().";
+      if (allowed.includes(event.key)) {
+        expression += event.key;
+        render();
+      } else if (event.key === "Enter") {
+        calculate();
+      } else if (event.key === "Backspace") {
+        expression = expression.slice(0, -1);
+        render();
+      } else if (event.key === "Escape") {
+        expression = "";
+        render();
+      }
+    });
+  </script>
+</body>
+</html>

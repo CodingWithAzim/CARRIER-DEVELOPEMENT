@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Random Number Generator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="card">
+    <span class="eyebrow">JavaScript Practice</span>
+    <h1>Random Number</h1>
+    <p class="muted">Choose a range and generate a number.</p>
+
+    <div class="grid">
+      <div>
+        <label for="min">Minimum</label>
+        <input id="min" type="number" value="1">
+      </div>
+      <div>
+        <label for="max">Maximum</label>
+        <input id="max" type="number" value="100">
+      </div>
+    </div>
+
+    <button id="generate">Generate</button>
+
+    <div id="result" class="number">?</div>
+  </main>
+
+  <script>
+    const minInput = document.querySelector("#min");
+    const maxInput = document.querySelector("#max");
+    const result = document.querySelector("#result");
+
+    document.querySelector("#generate").addEventListener("click", () => {
+      const min = Number(minInput.value);
+      const max = Number(maxInput.value);
+
+      if (!Number.isInteger(min) || !Number.isInteger(max) || min > max) {
+        result.textContent = "Invalid";
+        return;
+      }
+
+      const number = Math.floor(Math.random() * (max - min + 1)) + min;
+      result.textContent = number;
+    });
+  </script>
+</body>
+</html>
