@@ -1,0 +1,105 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial;
+}
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+.fullCard {
+  /* min-height: 100vh; */
+  max-width: 400px;
+  border: 1px solid rgba(0, 0, 0, 0.87);
+  /* padding: 20px; */
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.imageDiv {
+  position: relative;
+  /* background-color: red; */
+  width: 100%;
+  height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.imageDiv::before {
+  content: "";
+  position: absolute;
+  background-position: center;
+  background-size: cover;
+  inset: 0;
+  background-image: url(IMG-20260123-WA0001.jpg);
+  filter: blur(10px);
+}
+.mainImage {
+  position: relative;
+  z-index: 1;
+
+width:120px;
+height: 120px;
+border-radius: 50%;
+  /* border-radius: 50%; */
+  object-fit: cover;
+}
+.backgroundImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.cardContent {
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+h1 {
+  margin-bottom: 5px;
+}
+.role {
+  color: rgb(255, 0, 255);
+  font-weight: 600;
+  font-size: 16px;
+  margin-bottom: 13px;
+}
+.goal {
+  font-size: 15px;
+  color: #7a7676;
+  line-height: 1.6;
+  margin-bottom: 13px;
+}
+.buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.btn {
+  display: inline-block;
+  padding: 11px 16px;
+  border-radius: 8px;
+  text-decoration: none;
+}
+.btn1 {
+  color: #ffffff;
+  font-weight: 600;
+  background-color: rgb(255, 0, 255);
+}
+.btn2 {
+  color: rgb(255, 0, 255);
+  font-weight: 600;
+  background-color: rgba(194, 196, 190, 0.527);
+}
