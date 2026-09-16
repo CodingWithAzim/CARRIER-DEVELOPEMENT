@@ -1,0 +1,4 @@
+* { box-sizing: border-box; }
+body { min-height: 100vh; margin: 0; display: grid; place-items: center; background: #0b0d10; color: white; font-family: Arial, sans-serif; }
+body::before { content: ""; position: fixed; inset: 0; pointer-events: none; opacity: 0.3; background-image: radial-gradient(rgba(255,255,255,0.5) 0.6px, transparent 0.6px); background-size: 5px 5px; }
+.page { position: relative; z-index: 1; text-align: center; }

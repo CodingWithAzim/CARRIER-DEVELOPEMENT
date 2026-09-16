@@ -1,0 +1,6 @@
+.grid {
+  display:grid;
+  grid-template-columns:max-content minmax(180px, 1fr) fit-content(300px);
+  gap:20px;
+}
+.box { background:#d8ff52; color:#111; padding:20px; }

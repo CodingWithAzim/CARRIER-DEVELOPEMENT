@@ -1,0 +1,4 @@
+.page{min-height:100vh;display:grid;grid-template-columns:220px 1fr 220px;grid-template-rows:80px 1fr 60px;grid-template-areas:"header header header" "nav main aside" "footer footer footer"}
+.page>*{padding:20px;background:#181c23;border:1px solid #333}
+header{grid-area:header}.page nav{grid-area:nav}.page main{grid-area:main}.page aside{grid-area:aside}.page footer{grid-area:footer}
+@media(max-width:800px){.page{grid-template-columns:1fr;grid-template-rows:auto;grid-template-areas:"header" "nav" "main" "aside" "footer"}}

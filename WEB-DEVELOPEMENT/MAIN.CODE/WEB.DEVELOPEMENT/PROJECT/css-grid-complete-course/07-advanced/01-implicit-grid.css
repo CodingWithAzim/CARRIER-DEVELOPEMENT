@@ -1,0 +1,7 @@
+.grid {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  grid-auto-rows:80px;
+  gap:10px;
+}
+.box { background:#d8ff52; padding:20px; }

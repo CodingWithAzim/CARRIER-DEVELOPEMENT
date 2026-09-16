@@ -1,0 +1,64 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  height: 100vh;
+  background-color: rgba(43, 40, 43, 0.932);
+  color: white;
+  display: grid;
+  place-items: center;
+}
+h1 {
+  margin-bottom: 10px;
+  font-weight: 900;
+}
+p {
+  letter-spacing: 1.1px;
+  color: rgba(242, 253, 247, 0.829);
+}
+.card {
+  position: relative;
+  width: 350px;
+  height: 210px;
+  padding: 20px;
+  background-color: rgba(167, 160, 167, 0.671);
+  border-radius: 20px;
+  /* display: grid;
+  place-items: center; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
+}
+.card::before {
+  position: absolute;
+  content: "";
+  width: 175px;
+  height: 175px;
+  background: #ffd700;
+  left: 175px;
+  left: 50%;
+  bottom: 50%;
+  filter: blur(55px);
+  pointer-events: none;
+}
+.card::after {
+  position: absolute;
+  content: "";
+  width: 175px;
+  height: 175px;
+  background: #ffd700;
+  right: 50%;
+  top: 50%;
+  filter: blur(55px);
+  pointer-events: none;
+}
+.card-content {
+  position: relative;
+  z-index: 2;
+}

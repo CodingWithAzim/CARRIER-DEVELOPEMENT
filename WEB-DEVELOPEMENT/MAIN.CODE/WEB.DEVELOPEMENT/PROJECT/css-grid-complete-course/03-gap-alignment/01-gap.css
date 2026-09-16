@@ -1,0 +1,2 @@
+.grid { display:grid; grid-template-columns:repeat(3,1fr); gap:30px 15px; }
+.box { background:#d8ff52; padding:35px; }

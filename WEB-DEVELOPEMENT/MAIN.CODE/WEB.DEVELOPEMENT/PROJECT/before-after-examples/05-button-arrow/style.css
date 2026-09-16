@@ -1,0 +1,4 @@
+* { box-sizing: border-box; }
+body { margin: 0; min-height: 100vh; display: grid; place-items: center; background: #0b0d10; }
+.button { display: inline-flex; align-items: center; gap: 10px; padding: 14px 20px; border-radius: 50px; background: white; color: black; text-decoration: none; font-family: Arial, sans-serif; font-weight: bold; }
+.button::after { content: "→"; font-size: 20px; }

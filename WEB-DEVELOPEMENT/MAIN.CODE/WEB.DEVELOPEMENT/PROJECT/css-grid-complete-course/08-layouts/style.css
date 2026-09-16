@@ -1,0 +1,9 @@
+body{margin:0;font-family:system-ui;background:#0b0d10;color:white;padding:20px}
+.magazine{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:80px 300px 180px 70px;grid-template-areas:
+"header header header"
+"lead lead sidebar"
+"story-a story-b sidebar"
+"footer footer footer";gap:12px}
+.magazine>*{padding:25px;background:#171b22;border-radius:16px}
+header{grid-area:header}.lead{grid-area:lead;background:#d8ff52;color:#111}.a{grid-area:story-a}.b{grid-area:story-b}aside{grid-area:sidebar}footer{grid-area:footer}
+@media(max-width:800px){.magazine{grid-template-columns:1fr;grid-template-rows:auto;grid-template-areas:"header" "lead" "story-a" "story-b" "sidebar" "footer"}}

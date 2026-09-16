@@ -1,0 +1,11 @@
+* { box-sizing: border-box; }
+body { margin: 0; min-height: 100vh; background: #0b0d10; color: white; font-family: Arial, sans-serif; }
+.page-shell { min-height: 100vh; display: grid; place-items: center; padding: 20px; }
+.card { position: relative; isolation: isolate; width: min(100%, 520px); padding: 48px; overflow: hidden; border: 1px solid rgba(255,255,255,0.12); border-radius: 24px; background: #15181d; }
+.card::before { content: ""; position: absolute; width: 220px; height: 220px; top: -110px; right: -70px; border-radius: 50%; background: #d8ff52; filter: blur(70px); opacity: 0.18; z-index: -1; pointer-events: none; }
+.card::after { content: ""; position: absolute; width: 180px; height: 180px; bottom: -100px; left: -60px; border-radius: 50%; background: #6f7cff; filter: blur(60px); opacity: 0.18; z-index: -1; pointer-events: none; }
+.tag { display: inline-block; padding: 6px 10px; border: 1px solid rgba(216,255,82,0.25); border-radius: 999px; color: #d8ff52; font-size: 0.75rem; }
+h1 { margin: 18px 0 10px; }
+p { color: #a4aab4; line-height: 1.6; }
+.button { display: inline-flex; margin-top: 20px; padding: 12px 16px; border-radius: 999px; background: white; color: black; text-decoration: none; font-weight: 700; }
+.button::after { content: " ↗"; }

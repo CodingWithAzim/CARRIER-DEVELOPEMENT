@@ -1,0 +1,14 @@
+.grid {
+  display: grid;
+  background: #111;
+  padding: 20px;
+}
+.box {
+  background: #d8ff52;
+  color: #111;
+  padding: 30px;
+  margin: 5px;
+  text-align: center;
+  font-weight: 800;
+}
+ 

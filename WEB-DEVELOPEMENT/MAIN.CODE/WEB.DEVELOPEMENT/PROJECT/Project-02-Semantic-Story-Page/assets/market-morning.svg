@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 800" role="img" aria-labelledby="title desc">
+  <title id="title">Morning market illustration</title>
+  <desc id="desc">A warm editorial illustration of a neighborhood market waking at sunrise.</desc>
+  <rect width="1600" height="800" fill="#d8c5a8"/>
+  <circle cx="1280" cy="180" r="100" fill="#ead28f"/>
+  <path d="M0 525L180 370l180 155 210-190 190 190 220-160 240 160 150-120 60 50v340H0z" fill="#817868"/>
+  <path d="M0 610h1600v190H0z" fill="#4d4841"/>
+  <rect x="180" y="350" width="380" height="230" rx="8" fill="#f2e6d0"/>
+  <path d="M150 350h440l-40-80H195z" fill="#9d4f2d"/>
+  <path d="M215 270h360" stroke="#fff7e7" stroke-width="20" stroke-dasharray="45 30"/>
+  <rect x="240" y="420" width="100" height="160" fill="#544a40"/>
+  <rect x="390" y="430" width="130" height="85" rx="6" fill="#b87a42"/>
+  <circle cx="975" cy="555" r="52" fill="#9f6d4e"/>
+  <rect x="900" y="610" width="150" height="14" rx="7" fill="#e3d4bd"/>
+  <circle cx="1180" cy="535" r="45" fill="#654e43"/>
+  <rect x="1115" y="600" width="130" height="14" rx="7" fill="#e3d4bd"/>
+  <g fill="#87a45a">
+    <circle cx="690" cy="625" r="26"/><circle cx="745" cy="625" r="26"/><circle cx="800" cy="625" r="26"/>
+  </g>
+  <g fill="#e79b4a"><circle cx="690" cy="590" r="15"/><circle cx="745" cy="590" r="15"/><circle cx="800" cy="590" r="15"/></g>
+  <text x="80" y="95" font-family="Georgia, serif" font-size="42" fill="#4d4841" letter-spacing="5">06:12 AM</text>
+</svg>

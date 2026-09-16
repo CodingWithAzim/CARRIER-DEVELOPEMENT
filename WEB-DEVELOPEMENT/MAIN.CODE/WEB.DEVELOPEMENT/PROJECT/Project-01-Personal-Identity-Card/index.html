@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <meta
+      name="description"
+      content="A modern personal identity card built with semantic HTML and modern CSS."
+    />
+    <title>Personal Identity Card</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="page-shell">
+      <section
+        class="identity-card"
+        aria-labelledby="profile-name"
+      >
+        <div
+          class="card-glow card-glow-one"
+          aria-hidden="true"
+        ></div>
+        <div
+          class="card-glow card-glow-two"
+          aria-hidden="true"
+        ></div>
+
+        <header class="profile-header">
+          <!-- <div
+            class="avatar"
+            role="img"
+            aria-label="Profile placeholder"
+          >
+            RT
+          </div> -->
+          <div class="avatar">
+            <img
+              src="./assets/cropped_circle_image (2).png"
+              alt="Raihan Tanvir profile photo"
+            />
+          </div>
+
+          <div class="profile-heading">
+            <p class="eyebrow">DIGITAL IDENTITY</p>
+            <h1 id="profile-name">Azim Ahmed</h1>
+            <p class="role">Aspiring Web Developer</p>
+          </div>
+
+          <span class="status-badge">
+            <span
+              class="status-dot"
+              aria-hidden="true"
+            ></span>
+            Available
+          </span>
+        </header>
+
+        <div class="divider" aria-hidden="true"></div>
+
+        <section
+          class="intro"
+          aria-labelledby="intro-title"
+        >
+          <p class="section-label" id="intro-title">
+            A little about me
+          </p>
+          <p>
+            I enjoy turning ideas into clean, useful digital
+            experiences. Right now I am building my skills
+            in HTML, CSS and JavaScript through real-world
+            projects.
+          </p>
+        </section>
+
+        <section
+          class="skill-panel"
+          aria-labelledby="skills-title"
+        >
+          <div class="section-heading-row">
+            <p class="section-label" id="skills-title">
+              Current focus
+            </p>
+            <span class="skill-count">03 skills</span>
+          </div>
+
+          <div class="skill-list">
+            <article class="skill-item">
+              <div class="skill-number">01</div>
+              <div>
+                <h2>HTML</h2>
+                <p>
+                  Semantic structure & accessible markup
+                </p>
+              </div>
+            </article>
+
+            <article class="skill-item">
+              <div class="skill-number">02</div>
+              <div>
+                <h2>CSS</h2>
+                <p>Responsive layouts & visual design</p>
+              </div>
+            </article>
+
+            <article class="skill-item">
+              <div class="skill-number">03</div>
+              <div>
+                <h2>JavaScript</h2>
+                <p>
+                  Interactive interfaces & problem solving
+                </p>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <footer class="profile-footer">
+          <div>
+            <p class="section-label">Based in</p>
+            <p class="footer-value">Dhaka, Bangladesh</p>
+          </div>
+
+          <a
+            class="contact-link"
+            href="mailto:hello@example.com"
+          >
+            Let's connect
+            <span aria-hidden="true">↗</span>
+          </a>
+        </footer>
+      </section>
+
+      <!-- <p class="page-note">
+        Project 01 · Personal Identity Card · Built with
+        HTML + CSS
+      </p> -->
+      <!-- INFORMATION ABOUT THIS PROJECT -->
+      <footer>
+        <div class="project-meta">
+          <span>PROJECT 01</span>
+          <span>·</span>
+          <span>Personal Identity Card</span>
+          <span>·</span>
+          <span>Created by Azim</span>
+          <span>·</span>
+
+          <span
+            class="time-ago"
+            data-created="2026-09-12T07:10:00"
+          >
+            Today
+          </span>
+        </div>
+      </footer>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,11 @@
+.grid {
+  display:grid;
+  grid-template-columns:
+    [sidebar-start] 180px
+    [sidebar-end content-start] 1fr
+    [content-end];
+  gap:10px;
+}
+.box { background:#d8ff52; padding:25px; }
+.box:nth-child(1) { grid-column:sidebar-start / sidebar-end; }
+.box:nth-child(n+2) { grid-column:content-start / content-end; }

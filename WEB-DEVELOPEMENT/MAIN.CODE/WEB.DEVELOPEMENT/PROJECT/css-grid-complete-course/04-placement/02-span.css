@@ -1,0 +1,5 @@
+.grid { display:grid; grid-template-columns:repeat(4,1fr); gap:10px; }
+.box { background:#d8ff52; padding:25px; }
+.box:nth-child(1) { grid-column:span 2; }
+.box:nth-child(2) { grid-column:span 2; }
+.box:nth-child(3) { grid-row:span 2; }

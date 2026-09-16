@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A modern semantic editorial story page about a neighborhood morning market.">
+  <title>First Light — A Neighborhood Story</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="First Light home">FIRST LIGHT</a>
+      <nav aria-label="Primary navigation">
+        <ul class="nav-list">
+          <li><a href="#story">Story</a></li>
+          <li><a href="#voices">Voices</a></li>
+          <li><a href="#details">Details</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <article class="story">
+      <header class="story-header container">
+        <p class="eyebrow">NEIGHBORHOOD JOURNAL · 06:12 AM</p>
+        <h1>The market wakes before the city does.</h1>
+        <p class="dek">
+          A visual story about the people, sounds, and small routines that turn an ordinary street into a shared morning ritual.
+        </p>
+        <div class="story-meta">
+          <address>By Nabil Rahman</address>
+          <time datetime="2026-09-11">September 11, 2026</time>
+          <span>7 min read</span>
+        </div>
+      </header>
+
+      <figure class="hero-figure container" id="story">
+        <img src="assets/market-morning.svg" alt="A stylized morning market street with vendors preparing their stalls at sunrise">
+        <figcaption>Before the first buses arrive, the street already has its own rhythm.</figcaption>
+      </figure>
+
+      <div class="story-layout container">
+        <aside class="story-index" aria-label="Story sections">
+          <p>IN THIS STORY</p>
+          <ol>
+            <li><a href="#first-sound">The first sound</a></li>
+            <li><a href="#small-routines">Small routines</a></li>
+            <li><a href="#voices">Why people return</a></li>
+          </ol>
+        </aside>
+
+        <div class="story-content">
+          <section id="first-sound" aria-labelledby="first-sound-title">
+            <p class="section-kicker">01 / THE FIRST SOUND</p>
+            <h2 id="first-sound-title">Metal shutters, kettle steam, footsteps.</h2>
+            <p>
+              The street does not open all at once. One shutter rises, then another. Someone drags a wooden crate across the pavement. A kettle clicks into place. These tiny sounds arrive before the traffic and slowly become a soundtrack.
+            </p>
+            <p>
+              That is what makes the first hour feel different. There is no rush to impress anyone. People are simply preparing to be useful to one another.
+            </p>
+          </section>
+
+          <blockquote>
+            “You know the day has started when three different people ask if you have eaten.”
+            <cite>— Rahim, fruit seller</cite>
+          </blockquote>
+
+          <section id="small-routines" aria-labelledby="small-routines-title">
+            <p class="section-kicker">02 / SMALL ROUTINES</p>
+            <h2 id="small-routines-title">Familiar gestures create belonging.</h2>
+            <p>
+              A regular customer points toward the usual basket without saying a word. A shopkeeper leaves a stool outside for an older neighbor. A delivery rider knows which doorway will be unlocked first.
+            </p>
+
+            <div class="fact-card" role="note" aria-label="Morning market fact">
+              <span class="fact-number">18</span>
+              <div>
+                <strong>minutes</strong>
+                <p>The average time our photographer observed from the first shutter opening to the street feeling fully active.</p>
+              </div>
+            </div>
+          </section>
+
+          <section id="voices" aria-labelledby="voices-title">
+            <p class="section-kicker">03 / WHY PEOPLE RETURN</p>
+            <h2 id="voices-title">The product is not the only thing being sold.</h2>
+            <p>
+              People come for fruit, tea, bread, and groceries. They also come for recognition. A familiar face behind a counter can make an unfamiliar week feel a little more manageable.
+            </p>
+
+            <div class="pull-quote">
+              <p>Good neighborhoods are built from repeated, ordinary moments.</p>
+            </div>
+
+            <p>
+              Maybe that is why the market matters. It is not a landmark. It does not need a giant sign. Its value is hidden inside a collection of small interactions that happen often enough to become part of someone's sense of home.
+            </p>
+          </section>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer" id="details">
+    <div class="container footer-inner">
+      <p><strong>FIRST LIGHT</strong><br>Stories from ordinary places.</p>
+      <p>Project 02 · Semantic Story Page</p>
+    </div>
+  </footer>
+</body>
+</html>

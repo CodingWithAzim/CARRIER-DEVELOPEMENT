@@ -1,0 +1,17 @@
+.cards {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+.card {
+  display:grid;
+  grid-template-rows:subgrid;
+  grid-row:span 3;
+  padding:20px;
+  background:#15181e;
+  border:1px solid #333;
+}
+.card h2 { margin:0; color:#d8ff52; }
+.card p { color:#bbb; }
+.card a { color:#111; background:#d8ff52; padding:10px 14px; justify-self:start; text-decoration:none; border-radius:999px; }
+@media(max-width:800px){ .cards{grid-template-columns:1fr;} }
