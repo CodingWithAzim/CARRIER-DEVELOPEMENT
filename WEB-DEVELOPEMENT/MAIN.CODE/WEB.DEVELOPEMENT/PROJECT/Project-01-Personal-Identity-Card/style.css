@@ -90,8 +90,12 @@ a {
   min-height: 100vh;
   margin: 0 auto;
   padding: 48px 0 28px;
-  display: grid;
-  place-items: center;
+  /* display: grid;
+  place-items: center; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .identity-card {
