@@ -30,24 +30,22 @@ img {
 .video {
   margin-top: 15px;
 }
-.location {
-  margin-top: 15px;
-  width: 250px;
+.location iframe {
+  width: clamp(300px, 70vw, 450px);
   height: 200px;
 }
-.formating{
-   margin-top: 15px; 
+
+.formating {
+  margin-top: 15px;
 }
 ol {
   padding-left: 20px;
 }
-.list{
-       margin-top: 15px; 
-
+.list {
+  margin-top: 15px;
 }
-.form{
-       margin-top: 15px; 
-
+.form {
+  margin-top: 15px;
 }
 .project-meta {
   margin: 16px 0 0;
