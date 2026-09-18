@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CSS Images & Replaced Elements — বাংলা Master Guide</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#0b0d10;color:#eef1f5;font-family:system-ui,sans-serif;line-height:1.7}.wrap{width:min(1050px,calc(100% - 28px));margin:auto}header{padding:40px 0 20px}h1{font-size:clamp(2rem,5vw,3.2rem)}section{background:#15191f;border:1px solid #303640;border-radius:18px;padding:24px;margin:20px 0}nav{position:sticky;top:0;background:#101318;padding:12px 0;z-index:3}nav a{color:#d8ff52;margin-right:12px;text-decoration:none;font-size:.9rem}pre{background:#090b0e;border:1px solid #303640;border-radius:10px;padding:15px;overflow:auto}code{background:#20252d;padding:2px 5px;border-radius:4px}.note{border-left:4px solid #d8ff52;background:#1d2418;padding:12px 15px}.warn{border-left:4px solid #ffae64;background:#281c12;padding:12px 15px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px}.demo{height:150px;border:2px dashed #687383;border-radius:10px;overflow:hidden;background:#20252d}.demo img{width:100%;height:100%}.cover{object-fit:cover}.contain{object-fit:contain}.fill{object-fit:fill}.none{object-fit:none}.scale{object-fit:scale-down}.pos img{object-fit:cover}.top img{object-position:top}.center img{object-position:center}.bottom img{object-position:bottom}.left img{object-position:left}.right img{object-position:right}table{width:100%;border-collapse:collapse}th,td{border:1px solid #353c47;padding:9px;text-align:left;vertical-align:top}th{background:#20252d}.small{color:#aeb6c2}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+<p class="small">CSS MASTER NOTE — বাংলা</p>
+<h1>Images, Video & Replaced Elements</h1>
+<p>এই ফাইলে <code>object-fit</code>, <code>object-position</code>, <code>width</code>, <code>height</code>, <code>aspect-ratio</code>, <code>overflow</code>, <code>display</code>, responsive image এবং related concepts একসাথে আছে।</p>
+</header>
+
+<nav>
+<a href="#model">Mental Model</a><a href="#fit">object-fit</a><a href="#position">object-position</a><a href="#size">Sizing</a><a href="#aspect">aspect-ratio</a><a href="#overflow">overflow</a><a href="#responsive">Responsive</a><a href="#project">Project</a><a href="#cheat">Cheat Sheet</a>
+</nav>
+
+<section id="model">
+<h2>1. Mental Model — Box আর Image এক জিনিস নয়</h2>
+<pre>┌─────────────────────────────┐
+│        IMAGE CONTENT        │
+│                             │  ← img element-এর BOX
+└─────────────────────────────┘
+
+width / height      → box-এর size
+aspect-ratio        → box-এর width:height ratio
+object-fit          → image content কীভাবে box-এ fit হবে
+object-position     → fit/crop হওয়ার পর কোন অংশ কোথায় থাকবে
+overflow            → box-এর বাইরে যাওয়া অংশ দেখা যাবে কি না
+transform: scale()  → rendered image-কে বড়/ছোট করা</pre>
+<div class="note"><b>মূল কথা:</b> width/height = box-এর মাপ; object-fit = fit করার নিয়ম; object-position = অবস্থান।</div>
+</section>
+
+<section id="fit">
+<h2>2. object-fit — Image কীভাবে fit হবে?</h2>
+<p>এটি <code>&lt;img&gt;</code> ও <code>&lt;video&gt;</code>-এর content-কে তার box-এর মধ্যে কীভাবে রাখা হবে তা নিয়ন্ত্রণ করে।</p>
+<div class="grid">
+<div><h3>fill</h3><div class="demo fill"><img src="https://picsum.photos/id/1015/800/500" alt="demo"></div><p class="small">Default। পুরো box ভরবে; ratio বদলাতে পারে।</p></div>
+<div><h3>cover</h3><div class="demo cover"><img src="https://picsum.photos/id/1015/800/500" alt="demo"></div><p class="small">পুরো box ভরবে; ratio থাকবে; কিছু অংশ crop হতে পারে।</p></div>
+<div><h3>contain</h3><div class="demo contain"><img src="https://picsum.photos/id/1015/800/500" alt="demo"></div><p class="small">পুরো image দেখা যাবে; খালি জায়গা থাকতে পারে।</p></div>
+<div><h3>none</h3><div class="demo none"><img src="https://picsum.photos/id/1015/800/500" alt="demo"></div><p class="small">Image-এর নিজের size রাখে।</p></div>
+<div><h3>scale-down</h3><div class="demo scale"><img src="https://picsum.photos/id/1015/800/500" alt="demo"></div><p class="small">none বা contain-এর মধ্যে ছোট result নেয়।</p></div>
+</div>
+<pre>img {
+  width: 300px;       /* box-এর width */
+  height: 200px;      /* box-এর height */
+  object-fit: cover;  /* content কীভাবে fit হবে */
+}</pre>
+<table><tr><th>Value</th><th>সহজ অর্থ</th></tr>
+<tr><td>fill</td><td>পুরো box ভরো; প্রয়োজন হলে stretch/squash হতে পারে</td></tr>
+<tr><td>cover</td><td>পুরো box ভরো; crop হতে পারে</td></tr>
+<tr><td>contain</td><td>পুরো image দেখাও; খালি জায়গা থাকতে পারে</td></tr>
+<tr><td>none</td><td>নিজের size বজায় রাখো</td></tr>
+<tr><td>scale-down</td><td>none/contain-এর মধ্যে ছোট result</td></tr></table>
+</section>
+
+<section id="position">
+<h2>3. object-position — কোন অংশ কোথায় থাকবে?</h2>
+<p>বিশেষ করে <code>object-fit: cover</code> করলে crop হয়। তখন object-position বলে কোন অংশকে অগ্রাধিকার দেওয়া হবে।</p>
+<div class="grid">
+<div><h3>top</h3><div class="demo pos top"><img src="https://picsum.photos/id/1015/800/500" alt=""></div></div>
+<div><h3>center</h3><div class="demo pos center"><img src="https://picsum.photos/id/1015/800/500" alt=""></div></div>
+<div><h3>bottom</h3><div class="demo pos bottom"><img src="https://picsum.photos/id/1015/800/500" alt=""></div></div>
+<div><h3>left</h3><div class="demo pos left"><img src="https://picsum.photos/id/1015/800/500" alt=""></div></div>
+<div><h3>right</h3><div class="demo pos right"><img src="https://picsum.photos/id/1015/800/500" alt=""></div></div>
+</div>
+<pre>img {
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Percent দিয়েও লেখা যায় */
+object-position: 50% 50%; /* X=50%, Y=50% → center */
+object-position: 0% 0%;   /* left top */
+object-position: 100% 100%; /* right bottom */
+object-position: 30% 70%; /* X=30%, Y=70% */</pre>
+<div class="note"><b>মনে রাখো:</b> object-fit = “কীভাবে fit?”; object-position = “fit/crop হওয়ার পর কোন অংশ কোথায়?”</div>
+</section>
+
+<section id="size">
+<h2>4. width + height — Box-এর মাপ</h2>
+<pre>.photo {
+  width: 300px;
+  height: 200px;
+}</pre>
+<p>এখানে image element-এর box 300×200। Original image ratio আলাদা হলে শুধু width/height সেট করলে distortion হতে পারে।</p>
+<pre>/* সাধারণ responsive image */
+img {
+  width: 100%;
+  height: auto;
+}
+
+/* parent-এর চেয়ে বড় হতে দেবে না */
+img {
+  max-width: 100%;
+  height: auto;
+}</pre>
+<div class="warn"><b>Difference:</b> <code>width:100%</code> parent-এর পুরো width নেওয়ার চেষ্টা করে। <code>max-width:100%</code> parent-এর চেয়ে বড় হতে দেয় না।</div>
+</section>
+
+<section id="aspect">
+<h2>5. aspect-ratio — Width : Height ratio</h2>
+<pre>.box {
+  width: 300px;
+  aspect-ratio: 16 / 9;
+}</pre>
+<p>300 ÷ 16 × 9 = 168.75px height। এটি image crop করে না; এটি element-এর box-এর ratio ঠিক করে।</p>
+<div class="grid"><div><b>1 / 1</b><p>Square</p></div><div><b>16 / 9</b><p>Video-like</p></div><div><b>3 / 4</b><p>Portrait</p></div></div>
+<div class="note"><b>Moral:</b> aspect-ratio = box-এর shape; object-fit = box-এর ভিতরের image-এর fit।</div>
+</section>
+
+<section id="overflow">
+<h2>6. overflow — বাইরে গেলে কী হবে?</h2>
+<pre>.avatar {
+  width: 160px;
+  height: 160px;
+  overflow: hidden;
+}
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.1);
+}</pre>
+<p><code>scale(1.1)</code> image-কে বড় করে। <code>overflow:hidden</code> box-এর বাইরে যাওয়া অংশ দেখায় না।</p>
+<table><tr><th>Value</th><th>অর্থ</th></tr><tr><td>visible</td><td>বাইরের অংশ দেখা যেতে পারে</td></tr><tr><td>hidden</td><td>বাইরের অংশ লুকায়</td></tr><tr><td>auto</td><td>প্রয়োজনে scroll</td></tr><tr><td>scroll</td><td>scroll mechanism রাখে</td></tr></table>
+</section>
+
+<section id="responsive">
+<h2>7. Responsive Image</h2>
+<pre>img {
+  display: block; /* block-level behavior */
+  max-width: 100%; /* parent-এর বাইরে যাবে না */
+  height: auto;    /* original ratio বজায় রাখে */
+}</pre>
+<p>Fixed frame/card image-এর জন্য:</p>
+<pre>.card-image {
+  width: 100%;
+  aspect-ratio: 16 / 9; /* frame-এর ratio */
+  object-fit: cover;    /* frame পুরো fill */
+  object-position: center; /* মাঝের অংশ priority */
+  border-radius: 16px;
+}</pre>
+</section>
+
+<section>
+<h2>8. img বনাম background-image</h2>
+<table><tr><th>&lt;img&gt;</th><th>background-image</th></tr>
+<tr><td>HTML-এর actual image content</td><td>CSS background</td></tr>
+<tr><td><code>object-fit</code></td><td><code>background-size</code></td></tr>
+<tr><td><code>object-position</code></td><td><code>background-position</code></td></tr>
+<tr><td>Meaningful image হলে উপযোগী</td><td>Decorative background হলে উপযোগী</td></tr>
+<tr><td><code>alt</code> দেওয়া যায়</td><td>background-এর জন্য alt নেই</td></tr></table>
+<pre>/* img */
+img { object-fit: cover; object-position: center; }
+
+/* background */
+.box { background-size: cover; background-position: center; }</pre>
+</section>
+
+<section>
+<h2>9. Related Properties — কোনটা কী করে?</h2>
+<table><tr><th>Property</th><th>কাজ</th></tr>
+<tr><td>width</td><td>element box-এর চওড়া</td></tr>
+<tr><td>height</td><td>element box-এর উচ্চতা</td></tr>
+<tr><td>aspect-ratio</td><td>width:height ratio</td></tr>
+<tr><td>object-fit</td><td>image/video content-এর fit</td></tr>
+<tr><td>object-position</td><td>content-এর position</td></tr>
+<tr><td>overflow</td><td>box-এর বাইরে যাওয়া content</td></tr>
+<tr><td>display</td><td>element-এর layout behavior</td></tr>
+<tr><td>max-width</td><td>maximum width limit</td></tr>
+<tr><td>height:auto</td><td>ratio অনুযায়ী height</td></tr>
+<tr><td>transform:scale()</td><td>visual size পরিবর্তন</td></tr>
+<tr><td>border-radius</td><td>corner/shape</td></tr>
+<tr><td>alt</td><td>accessibility-এর জন্য image description</td></tr></table>
+</section>
+
+<section id="project">
+<h2>10. Final Practice Project — Profile Card</h2>
+<p>নিচের code-টি নিজে লিখে browser-এ চালাও। Bengali comment-গুলো দেখে বুঝবে কোন line কেন আছে।</p>
+<pre>&lt;div class="profile-card"&gt;
+  &lt;div class="avatar"&gt;
+    &lt;img src="profile.jpg" alt="Profile photo"&gt;
+  &lt;/div&gt;
+
+  &lt;div class="content"&gt;
+    &lt;h2&gt;Azim Ahmed&lt;/h2&gt;
+    &lt;p&gt;Aspiring Web Developer&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+<pre>.profile-card {
+  width: min(100%, 600px);
+
+  display: grid;
+
+  /* ২টি column:
+     প্রথমটি avatar-এর প্রয়োজনীয় জায়গা,
+     দ্বিতীয়টি বাকি জায়গা */
+  grid-template-columns: auto 1fr;
+
+  gap: 20px;
+  padding: 20px;
+}
+
+.avatar {
+  width: 120px;
+
+  /* 1:1 → square box */
+  aspect-ratio: 1 / 1;
+
+  /* গোল shape */
+  border-radius: 50%;
+
+  /* বড়/crop image বাইরে দেখাবে না */
+  overflow: hidden;
+}
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+
+  /* image stretch না করে পুরো box fill */
+  object-fit: cover;
+
+  /* crop হলে মাঝের অংশ priority */
+  object-position: center;
+
+  /* image-কে block করা */
+  display: block;
+
+  /* চাইলে test করো */
+  /* transform: scale(1.1); */
+}</pre>
+
+<h3>Practice Challenge</h3>
+<ol>
+<li><code>cover</code> → <code>contain</code> করো এবং difference দেখো।</li>
+<li><code>center</code> → <code>top</code> করো এবং crop দেখো।</li>
+<li><code>1 / 1</code> → <code>16 / 9</code> করো।</li>
+<li><code>overflow:hidden</code> → <code>visible</code> করো, তারপর scale বাড়াও।</li>
+<li><code>width:120px</code> → <code>200px</code> করো।</li>
+<li>নিজের image দিয়ে card বানাও।</li>
+</ol>
+</section>
+
+<section id="cheat">
+<h2>11. Final Cheat Sheet</h2>
+<pre>width / height
+      ↓
+BOX-এর size
+
+aspect-ratio
+      ↓
+BOX-এর shape/ratio
+
+object-fit
+      ↓
+IMAGE কীভাবে BOX-এর মধ্যে fit হবে
+
+object-position
+      ↓
+কোন অংশ কোথায় থাকবে
+
+overflow
+      ↓
+BOX-এর বাইরে যাওয়া অংশ দেখা যাবে কি না
+
+transform: scale()
+      ↓
+Rendered image visually বড়/ছোট
+
+border-radius
+      ↓
+BOX-এর corner/shape
+
+max-width: 100% + height:auto
+      ↓
+Responsive image</pre>
+
+<div class="note">
+<h3>এক লাইনের Moral</h3>
+<p><b>“আগে BOX-এর size ও ratio ঠিক করো → তারপর image কীভাবে fit করবে ঠিক করো → crop হলে কোন অংশ দেখাবে ঠিক করো → বাইরে গেলে overflow ঠিক করো।”</b></p>
+</div>
+
+<h3>নিজেকে এই ৮টা প্রশ্ন করো</h3>
+<ol>
+<li>আমার box-এর width/height কত?</li>
+<li>আমার কি fixed ratio দরকার?</li>
+<li>পুরো image দেখতে চাই, নাকি frame পুরো fill করতে চাই?</li>
+<li>Crop হলে কোন অংশ রাখতে চাই?</li>
+<li>Box-এর বাইরে image গেলে কী করব?</li>
+<li>Mobile-এ image কীভাবে resize করবে?</li>
+<li>Image meaningful নাকি decorative?</li>
+<li>এখানে <code>&lt;img&gt;</code> নাকি <code>background-image</code> বেশি উপযুক্ত?</li>
+</ol>
+</section>
+</div>
+</body>
+</html>

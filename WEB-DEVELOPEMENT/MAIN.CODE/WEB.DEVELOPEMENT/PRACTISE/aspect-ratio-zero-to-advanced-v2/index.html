@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>aspect-ratio — Zero to Advanced</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="page">
+
+    <header class="hero">
+      <p class="eyebrow">CSS MASTER PRACTICE</p>
+      <h1><code>aspect-ratio</code><span>Zero → Advanced</span></h1>
+      <p class="hero-text">
+        প্রতিটি উদাহরণের পাশে লেখা আছে <strong>“এখানে কেন ব্যবহার করেছি?”</strong>
+        এবং ঠিক নিচেই <strong>সারমর্ম</strong> — যাতে concept + real use একসাথে বোঝো।
+      </p>
+      <div class="master-rule">
+        <div class="mini-label">মূল ধারণা</div>
+        <div class="big-code"><code>aspect-ratio: 1;</code></div>
+        <p>Width : Height = <strong>1 : 1</strong> → Width যত, Height-ও তত।</p>
+      </div>
+    </header>
+
+    <section class="section">
+      <div class="section-head"><div class="num">01</div><div><p class="label">BASIC</p><h2>সবচেয়ে সহজ উদাহরণ</h2><p>Height না লিখে ratio দিয়ে Height ঠিক করা।</p></div></div>
+      <div class="two-col">
+        <div class="card">
+          <p class="mini-label">CODE + RESULT</p>
+          <pre><code>.box {
+  width: 220px;
+  aspect-ratio: 1;
+}</code></pre>
+          <!-- width = 220px, ratio = 1:1 → height = 220px -->
+          <div class="square">220 × 220</div>
+        </div>
+        <div class="card explain">
+          <h3>এখানে কেন ব্যবহার করেছি?</h3>
+          <p>
+            আমরা শুধু <code>width: 220px</code> দিয়েছি। Height সরাসরি দিইনি।
+            <code>aspect-ratio: 1</code> CSS-কে বলছে: <strong>Width ও Height সমান রাখো।</strong>
+          </p>
+          <div class="flow"><span>220px width</span><b>→</b><span>1 : 1</span><b>→</b><strong>220px height</strong></div>
+          <div class="summary"><b>সারমর্ম — এই জায়গার ব্যবহার</b><p>যখন box-কে সবসময় square রাখতে চাই, Width বদলালেও Height যেন সেই অনুযায়ী বদলায়—তখন <code>aspect-ratio: 1</code> ব্যবহার করি।</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head"><div class="num">02</div><div><p class="label">COMPARE</p><h2>Manual Height বনাম aspect-ratio</h2><p>দুটোর কাজ চোখে দেখে তুলনা করো।</p></div></div>
+      <div class="two-col">
+        <div class="card">
+          <p class="mini-label">A — MANUAL HEIGHT</p>
+          <pre><code>.box {
+  width: 220px;
+  height: 150px;
+}</code></pre>
+          <div class="rectangle">220 × 150</div>
+          <div class="summary"><b>সারমর্ম — এখানে কী হচ্ছে?</b><p>Width ও Height দুটোই fixed। Width বদলালেও Height 150px-ই থাকবে; তাই proportion নিজে থেকে বজায় থাকবে না।</p></div>
+        </div>
+        <div class="card highlight">
+          <p class="mini-label">B — ASPECT-RATIO</p>
+          <pre><code>.box {
+  width: 220px;
+  aspect-ratio: 1;
+}</code></pre>
+          <div class="square">220 × 220</div>
+          <div class="summary"><b>সারমর্ম — এখানে কী হচ্ছে?</b><p>Height fixed নয়। Width বদলালে 1:1 ratio অনুযায়ী Height-ও বদলায়; তাই square shape বজায় থাকে।</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head"><div class="num">03</div><div><p class="label">RATIO</p><h2>Ratio বদলালে কী হয়?</h2><p><code>1</code> শুধু square-এর জন্য নয়। Ratio বদলালে Width ও Height-এর সম্পর্ক বদলায়।</p></div></div>
+      <div class="ratio-grid">
+        <article class="card"><div class="ratio-title"><code>1 / 1</code><span>Square</span></div><div class="shape r11">1 : 1</div><div class="summary"><b>সারমর্ম — কখন?</b><p>Width = Height। Avatar, icon box, square card ইত্যাদিতে useful।</p></div></article>
+        <article class="card"><div class="ratio-title"><code>2 / 1</code><span>Wide</span></div><div class="shape r21">2 : 1</div><div class="summary"><b>সারমর্ম — কখন?</b><p>Width Height-এর দ্বিগুণ। Banner, horizontal thumbnail ইত্যাদিতে useful।</p></div></article>
+        <article class="card"><div class="ratio-title"><code>1 / 2</code><span>Tall</span></div><div class="shape r12">1 : 2</div><div class="summary"><b>সারমর্ম — কখন?</b><p>Height Width-এর দ্বিগুণ। Portrait বা vertical card-এ useful।</p></div></article>
+        <article class="card"><div class="ratio-title"><code>16 / 9</code><span>Media</span></div><div class="shape r169">16 : 9</div><div class="summary"><b>সারমর্ম — কখন?</b><p>Video/media frame-এর proportion ধরে রাখতে খুব useful।</p></div></article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head"><div class="num">04</div><div><p class="label">REAL PROJECT</p><h2>তোমার Identity Card-এ ব্যবহার</h2><p>এখন তোমার আসল project-এর তিনটি জায়গা একসাথে দেখো।</p></div></div>
+
+      <article class="real-use">
+        <div><p class="mini-label">01 — AVATAR</p><pre><code>.avatar {
+  width: 72px;
+  aspect-ratio: 1;
+}</code></pre><div class="avatar-demo">72 × 72</div></div>
+        <div class="real-text"><h3>এখানে কেন ব্যবহার করেছি?</h3><p>Avatar-এর Width 72px। আমরা চাই Height-ও 72px হোক। তাই Height আলাদা করে না লিখে 1:1 ratio দেওয়া হয়েছে।</p><div class="summary"><b>সারমর্ম — এই জায়গার ব্যবহার</b><p>Avatar-কে square রাখা যায়। পরে Width 60px বা 100px করলেও Height automatically একই হবে।</p></div></div>
+      </article>
+
+      <article class="real-use">
+        <div><p class="mini-label">02 — CARD GLOW</p><pre><code>.card-glow {
+  width: 220px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+}</code></pre><div class="glow-demo">220 × 220</div></div>
+        <div class="real-text"><h3>এখানে কেন ব্যবহার করেছি?</h3><p>Glow-কে গোল করতে Width ও Height সমান দরকার। প্রথমে <code>aspect-ratio: 1</code> 220×220 বানায়, তারপর <code>border-radius: 50%</code> এটাকে circle করে।</p><div class="summary"><b>সারমর্ম — এই জায়গার ব্যবহার</b><p>Equal width + height থাকার কারণে <code>border-radius: 50%</code> দিলে perfect circular glow পাওয়া যায়।</p></div></div>
+      </article>
+
+      <article class="real-use">
+        <div><p class="mini-label">03 — STATUS DOT</p><pre><code>.status-dot {
+  width: 7px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+}</code></pre><div class="status-preview"><span class="dot"></span><span>Available</span></div></div>
+        <div class="real-text"><h3>এখানে কেন ব্যবহার করেছি?</h3><p>Status dot ছোট circular indicator। Width 7px হলে Height-ও 7px দরকার, তাই 1:1 ratio দেওয়া হয়েছে।</p><div class="summary"><b>সারমর্ম — এই জায়গার ব্যবহার</b><p>Dot-কে perfectly round রাখা যায় এবং পরে Width বদলালেও Height automatically বদলায়।</p></div></div>
+      </article>
+    </section>
+
+    <section class="section">
+      <div class="section-head"><div class="num">05</div><div><p class="label">RESPONSIVE</p><h2>Responsive design-এ আসল শক্তি</h2><p>Width fluid হলেও proportion ধরে রাখা।</p></div></div>
+      <div class="responsive">
+        <div class="media"><span>16 : 9<br>responsive frame</span></div>
+        <div class="explain"><pre><code>.media {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+}</code></pre><h3>এখানে কেন ব্যবহার করেছি?</h3><p><code>width: 100%</code> screen/container অনুযায়ী box-কে ছোট-বড় হতে দেয়। <code>aspect-ratio: 16 / 9</code> Height-কে সেই Width-এর সঙ্গে একই proportion-এ রাখে।</p><div class="summary"><b>সারমর্ম — Responsive use</b><p>Fluid Width + fixed ratio = responsive shape। তাই image, video, banner, thumbnail-এর proportion ঠিক থাকে।</p></div></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-head"><div class="num">06</div><div><p class="label">EXPERIMENT</p><h2>নিজে পরিবর্তন করে দেখো</h2><p>এখান থেকে concept সবচেয়ে ভালোভাবে মনে থাকবে।</p></div></div>
+      <div class="experiment">
+        <div>
+          <pre><code>.experiment-shape {
+  width: 300px;
+  aspect-ratio: 1;
+}</code></pre>
+          <p class="instruction">শুধু <code>aspect-ratio</code> বদলে একে একে পরীক্ষা করো:</p>
+          <div class="chips"><code>1</code><code>2 / 1</code><code>1 / 2</code><code>16 / 9</code></div>
+          <div class="summary"><b>সারমর্ম — কী শিখবে?</b><p><code>aspect-ratio</code> কোনো size নয়; এটি Width ও Height-এর <strong>সম্পর্ক</strong> ঠিক করে। Ratio বদলালে একই Width থেকেও Height বদলায়।</p></div>
+        </div>
+        <div class="experiment-stage"><div class="experiment-shape">CHANGE ME</div></div>
+      </div>
+    </section>
+
+    <section class="final-note">
+      <p class="eyebrow">KHATA NOTE</p><h2>খাতায় লেখার জন্য শেষ সারমর্ম</h2>
+      <div class="cheat">
+        <div><code>aspect-ratio</code><span>→ Width ও Height-এর অনুপাত ঠিক করে।</span></div>
+        <div><code>aspect-ratio: 1;</code><span>→ 1 : 1 → Width = Height</span></div>
+        <div><code>width: 220px + aspect-ratio: 1</code><span>→ 220 × 220</span></div>
+        <div><code>aspect-ratio: 16 / 9</code><span>→ responsive media proportion</span></div>
+        <div><code>width: 100% + aspect-ratio</code><span>→ Width fluid, proportion fixed</span></div>
+      </div>
+      <div class="memory"><strong>মনে রাখবে:</strong> <span><code>aspect-ratio</code> = “Width বদলালেও Height-কে নির্দিষ্ট অনুপাতে রাখার নিয়ম।”</span></div>
+    </section>
+
+  </main>
+</body>
+</html>

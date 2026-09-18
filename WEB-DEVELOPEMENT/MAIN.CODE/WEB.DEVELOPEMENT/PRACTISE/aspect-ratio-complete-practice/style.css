@@ -1,0 +1,424 @@
+/* =========================================================
+   aspect-ratio Complete Practice
+   সব গুরুত্বপূর্ণ জায়গায় বাংলা comment দেওয়া হয়েছে।
+   ========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Arial, "Noto Sans Bengali", sans-serif;
+  color: #eaf0f7;
+  background:
+    radial-gradient(circle at top right, rgba(80,120,255,.14), transparent 35%),
+    #0b0f14;
+}
+
+.page {
+  width: min(100% - 32px, 1000px);
+  margin: 0 auto;
+  padding: 50px 0 80px;
+}
+
+h1, h2, h3, p {
+  margin-top: 0;
+}
+
+code, pre {
+  font-family: Consolas, "Courier New", monospace;
+}
+
+code {
+  color: #d9ff64;
+}
+
+.eyebrow {
+  margin-bottom: 10px;
+  color: #d9ff64;
+  font-size: .75rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.hero {
+  margin-bottom: 28px;
+}
+
+.hero h1 {
+  margin-bottom: 16px;
+  font-size: clamp(2rem, 6vw, 4rem);
+}
+
+.lead {
+  max-width: 720px;
+  color: #aeb8c4;
+  line-height: 1.8;
+}
+
+.rule-box {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 14px;
+  margin-top: 24px;
+  padding: 18px;
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 16px;
+  background: rgba(255,255,255,.04);
+}
+
+.section {
+  margin-top: 24px;
+  padding: 28px;
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 22px;
+  background: rgba(255,255,255,.035);
+}
+
+.section-heading {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 16px;
+  align-items: start;
+  margin-bottom: 24px;
+}
+
+.number {
+  display: grid;
+  place-items: center;
+  width: 42px;
+
+  /* এই aspect-ratio: 1 এর জন্য 42px × 42px হবে */
+  aspect-ratio: 1;
+
+  margin: 0;
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 12px;
+  color: #d9ff64;
+  font-weight: 700;
+}
+
+.section-heading h2 {
+  margin-bottom: 8px;
+}
+
+.section-heading p:last-child {
+  margin-bottom: 0;
+  color: #aeb8c4;
+  line-height: 1.7;
+}
+
+.demo-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.demo-card,
+.explain-card,
+.comparison-card,
+.project-card {
+  padding: 20px;
+  border: 1px solid rgba(255,255,255,.09);
+  border-radius: 18px;
+  background: rgba(0,0,0,.16);
+}
+
+.demo-label {
+  margin-bottom: 12px;
+  color: #7f8a98;
+  font-size: .75rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+pre {
+  overflow: auto;
+  margin: 0;
+  padding: 14px;
+  border-radius: 12px;
+  background: #080b0f;
+  line-height: 1.6;
+}
+
+/* =========================================================
+   সবচেয়ে গুরুত্বপূর্ণ উদাহরণ
+
+   width = 220px
+
+   aspect-ratio: 1;
+   মানে Width : Height = 1 : 1
+
+   তাই CSS-এর কাছে:
+   Width 220px হলে Height-ও 220px
+
+   ফল:
+   220px × 220px
+   ========================================================= */
+.square-box {
+  display: grid;
+  place-items: center;
+  width: 220px;
+  aspect-ratio: 1;
+  margin: 24px auto 0;
+  border: 2px solid #d9ff64;
+  border-radius: 18px;
+  background: rgba(217,255,100,.08);
+  color: #d9ff64;
+  font-weight: 700;
+}
+
+.steps {
+  display: grid;
+  gap: 8px;
+}
+
+.step {
+  display: flex;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: rgba(255,255,255,.04);
+}
+
+.step strong {
+  color: #d9ff64;
+}
+
+.arrow {
+  color: #687585;
+  text-align: center;
+}
+
+.result {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px;
+  border-radius: 10px;
+  background: rgba(217,255,100,.1);
+}
+
+/* =========================================================
+   aspect-ratio না ব্যবহার করে height সরাসরি দেওয়া
+   ========================================================= */
+.comparison-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.rectangle-box {
+  display: grid;
+  place-items: center;
+  width: 220px;
+  height: 150px;
+  margin: 24px auto 0;
+  border: 2px solid #74b8ff;
+  border-radius: 18px;
+  background: rgba(116,184,255,.08);
+  color: #74b8ff;
+  font-weight: 700;
+}
+
+.small-note {
+  margin-top: 16px;
+  margin-bottom: 0;
+  color: #8f9baa;
+  line-height: 1.6;
+}
+
+/* =========================================================
+   Ratio 1/1, 2/1, 1/2
+   ========================================================= */
+.ratio-table,
+.ratio-demo-grid,
+.project-example {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.ratio-item {
+  padding: 18px;
+  border: 1px solid rgba(255,255,255,.09);
+  border-radius: 16px;
+  background: rgba(0,0,0,.14);
+}
+
+.ratio-item code {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+.ratio-item strong {
+  display: block;
+  margin-bottom: 6px;
+}
+
+.ratio-item span {
+  color: #8f9baa;
+  font-size: .88rem;
+}
+
+.ratio-demo-card {
+  padding: 18px;
+  border: 1px solid rgba(255,255,255,.09);
+  border-radius: 18px;
+  background: rgba(0,0,0,.14);
+}
+
+.ratio-one,
+.ratio-two,
+.ratio-half {
+  display: grid;
+  place-items: center;
+  width: 180px;
+  margin: 0 auto;
+  border-radius: 14px;
+  font-weight: 800;
+}
+
+/* 1:1 → 180 × 180 */
+.ratio-one {
+  aspect-ratio: 1 / 1;
+  border: 2px solid #d9ff64;
+  color: #d9ff64;
+  background: rgba(217,255,100,.1);
+}
+
+/* 2:1 → width 180, তাই height 90 */
+.ratio-two {
+  aspect-ratio: 2 / 1;
+  border: 2px solid #74b8ff;
+  color: #74b8ff;
+  background: rgba(116,184,255,.1);
+}
+
+/* 1:2 → width 180, তাই height 360 */
+.ratio-half {
+  aspect-ratio: 1 / 2;
+  border: 2px solid #ffa07a;
+  color: #ffa07a;
+  background: rgba(255,160,122,.1);
+}
+
+/* =========================================================
+   তোমার নিজের project-এর মতো উদাহরণ
+   ========================================================= */
+
+.avatar-demo {
+  display: grid;
+  place-items: center;
+
+  width: 72px;
+
+  /* 72px width + 1:1 ratio = 72px height */
+  aspect-ratio: 1;
+
+  margin: 20px auto 0;
+  border-radius: 18px;
+  background: #d9ff64;
+  color: #0b0f14;
+  font-size: .75rem;
+  font-weight: 800;
+}
+
+.glow-demo {
+  display: grid;
+  place-items: center;
+
+  width: 180px;
+
+  /* 180px width + 1:1 ratio = 180px height */
+  aspect-ratio: 1;
+
+  margin: 20px auto 0;
+  border-radius: 50%;
+  background: rgba(217,255,100,.16);
+  color: #d9ff64;
+}
+
+.dot-demo {
+  width: 7px;
+
+  /* 7px width + 1:1 ratio = 7px height */
+  aspect-ratio: 1;
+
+  margin: 24px auto 0;
+  border-radius: 50%;
+  background: #d9ff64;
+  box-shadow: 0 0 20px rgba(217,255,100,.75);
+}
+
+/* =========================================================
+   Practice + Summary
+   ========================================================= */
+.practice,
+.summary-box {
+  padding: 28px;
+}
+
+.practice {
+  margin-top: 24px;
+  border: 1px solid rgba(217,255,100,.2);
+  border-radius: 22px;
+  background: rgba(217,255,100,.05);
+}
+
+.practice h2 {
+  margin-bottom: 12px;
+}
+
+.practice p {
+  color: #aeb8c4;
+  line-height: 1.7;
+}
+
+.summary {
+  margin-top: 24px;
+}
+
+.summary-box {
+  border: 2px solid rgba(217,255,100,.28);
+  border-radius: 22px;
+  background: rgba(217,255,100,.05);
+}
+
+.summary-box p {
+  color: #d5dde6;
+  line-height: 1.8;
+}
+
+.memory-line {
+  margin-bottom: 0;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255,255,255,.08);
+}
+
+/* Mobile */
+@media (max-width: 760px) {
+  .page {
+    width: min(100% - 20px, 1000px);
+    padding-top: 28px;
+  }
+
+  .section,
+  .practice,
+  .summary-box {
+    padding: 20px;
+  }
+
+  .demo-row,
+  .comparison-grid,
+  .ratio-table,
+  .ratio-demo-grid,
+  .project-example {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>aspect-ratio Complete Practice</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<main class="page">
+
+  <section class="hero">
+    <p class="eyebrow">CSS PRACTICE</p>
+    <h1><code>aspect-ratio: 1;</code></h1>
+    <p class="lead">
+      এই project-এ চোখে দেখে বোঝানো হয়েছে <strong>aspect-ratio আসলে কী করে</strong>।
+    </p>
+
+    <div class="rule-box">
+      <strong>মূল নিয়ম:</strong>
+      <span><code>aspect-ratio: 1;</code> মানে Width ও Height সমান রাখবে।</span>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-heading">
+      <p class="number">01</p>
+      <div>
+        <h2>সবচেয়ে সহজ উদাহরণ</h2>
+        <p>
+          এখানে Height লিখিনি। <code>aspect-ratio: 1;</code> দিয়ে বলেছি
+          Width ও Height সমান রাখতে।
+        </p>
+      </div>
+    </div>
+
+    <div class="demo-row">
+      <div class="demo-card">
+        <p class="demo-label">CSS</p>
+        <pre><code>.box {
+  width: 220px;
+  aspect-ratio: 1;
+}</code></pre>
+
+        <!-- width = 220px এবং ratio = 1:1
+             তাই height-ও 220px হবে। -->
+        <div class="square-box"><span>220 × 220</span></div>
+      </div>
+
+      <div class="explain-card">
+        <p class="demo-label">কী হলো?</p>
+        <div class="steps">
+          <div class="step"><strong>১.</strong> <span><code>width: 220px;</code></span></div>
+          <div class="arrow">↓</div>
+          <div class="step"><strong>২.</strong> <span><code>aspect-ratio: 1;</code></span></div>
+          <div class="arrow">↓</div>
+          <div class="step"><strong>৩.</strong> <span>Height-ও 220px</span></div>
+          <div class="arrow">↓</div>
+          <div class="result"><strong>ফল:</strong> <span>220px × 220px</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-heading">
+      <p class="number">02</p>
+      <div>
+        <h2>তুলনা করে দেখো</h2>
+        <p>একটিতে Height সরাসরি দেওয়া, অন্যটিতে ratio দিয়ে Height ঠিক হচ্ছে।</p>
+      </div>
+    </div>
+
+    <div class="comparison-grid">
+      <article class="comparison-card">
+        <p class="demo-label">A — Height সরাসরি</p>
+        <pre><code>.box {
+  width: 220px;
+  height: 150px;
+}</code></pre>
+        <div class="rectangle-box"><span>220 × 150</span></div>
+        <p class="small-note">এখানে Height আমরা নিজের হাতে 150px বলেছি।</p>
+      </article>
+
+      <article class="comparison-card">
+        <p class="demo-label">B — aspect-ratio</p>
+        <pre><code>.box {
+  width: 220px;
+  aspect-ratio: 1;
+}</code></pre>
+        <div class="square-box"><span>220 × 220</span></div>
+        <p class="small-note">এখানে Height লিখিনি; ratio থেকে Height হিসাব হয়েছে।</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-heading">
+      <p class="number">03</p>
+      <div>
+        <h2>1 মানে কী?</h2>
+        <p>
+          <code>aspect-ratio: 1;</code> কে সহজভাবে <code>1 / 1</code> ভাবো।
+          অর্থাৎ Width : Height = 1 : 1।
+        </p>
+      </div>
+    </div>
+
+    <div class="ratio-table">
+      <div class="ratio-item">
+        <code>1 / 1</code>
+        <strong>Width = Height</strong>
+        <span>যেমন: 200 × 200</span>
+      </div>
+      <div class="ratio-item">
+        <code>2 / 1</code>
+        <strong>Width দ্বিগুণ</strong>
+        <span>যেমন: 200 × 100</span>
+      </div>
+      <div class="ratio-item">
+        <code>1 / 2</code>
+        <strong>Height দ্বিগুণ</strong>
+        <span>যেমন: 100 × 200</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-heading">
+      <p class="number">04</p>
+      <div>
+        <h2>Ratio বদলালে shape বদলায়</h2>
+        <p>এতে বোঝা যাবে aspect-ratio শুধু square-এর জন্য নয়।</p>
+      </div>
+    </div>
+
+    <div class="ratio-demo-grid">
+      <div class="ratio-demo-card">
+        <p class="demo-label">1 / 1</p>
+        <div class="ratio-one"><span>1 : 1</span></div>
+        <code>aspect-ratio: 1 / 1;</code>
+      </div>
+
+      <div class="ratio-demo-card">
+        <p class="demo-label">2 / 1</p>
+        <div class="ratio-two"><span>2 : 1</span></div>
+        <code>aspect-ratio: 2 / 1;</code>
+      </div>
+
+      <div class="ratio-demo-card">
+        <p class="demo-label">1 / 2</p>
+        <div class="ratio-half"><span>1 : 2</span></div>
+        <code>aspect-ratio: 1 / 2;</code>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-heading">
+      <p class="number">05</p>
+      <div>
+        <h2>তোমার Card Project-এর সাথে মিল</h2>
+        <p>তোমার CSS-এ একই নিয়ম এই জায়গাগুলোতে ব্যবহার হয়েছে।</p>
+      </div>
+    </div>
+
+    <div class="project-example">
+      <article class="project-card">
+        <h3>Avatar</h3>
+        <pre><code>.avatar {
+  width: 72px;
+  aspect-ratio: 1;
+}</code></pre>
+        <div class="avatar-demo"><span>72 × 72</span></div>
+        <p>72px width → 72px height</p>
+      </article>
+
+      <article class="project-card">
+        <h3>Card Glow</h3>
+        <pre><code>.card-glow {
+  width: 220px;
+  aspect-ratio: 1;
+}</code></pre>
+        <div class="glow-demo"><span>220 × 220</span></div>
+        <p>220px width → 220px height</p>
+      </article>
+
+      <article class="project-card">
+        <h3>Status Dot</h3>
+        <pre><code>.status-dot {
+  width: 7px;
+  aspect-ratio: 1;
+}</code></pre>
+        <div class="dot-demo"></div>
+        <p>7px width → 7px height</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="practice">
+    <p class="eyebrow">TRY IT YOURSELF</p>
+    <h2>নিজে পরিবর্তন করে দেখো</h2>
+    <p><code>style.css</code>-এর practice box-এ এগুলো পরীক্ষা করো:</p>
+
+    <pre><code>aspect-ratio: 1;
+aspect-ratio: 2;
+aspect-ratio: 2 / 1;
+aspect-ratio: 1 / 2;
+aspect-ratio: 16 / 9;</code></pre>
+
+    <p>
+      <strong>কী দেখবে?</strong>
+      Width একই রাখলেও ratio বদলালে Height বদলে যাবে।
+    </p>
+  </section>
+
+  <section class="summary">
+    <p class="eyebrow">KHATA NOTE</p>
+    <h2>খাতার জন্য সারমর্ম</h2>
+
+    <div class="summary-box">
+      <p><strong><code>aspect-ratio: 1;</code></strong> → Width : Height = <strong>1 : 1</strong></p>
+      <p>অর্থাৎ Width যত হবে, Height-ও তত হবে।</p>
+
+      <pre><code>.box {
+  width: 220px;
+  aspect-ratio: 1;
+}
+
+/* ফল:
+   width  = 220px
+   height = 220px
+*/</code></pre>
+
+      <p class="memory-line">
+        <strong>মনে রাখো:</strong>
+        <code>aspect-ratio: 1;</code> = “Width আর Height সমান রাখো।”
+      </p>
+    </div>
+  </section>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>

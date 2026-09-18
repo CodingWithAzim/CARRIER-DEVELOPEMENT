@@ -1,0 +1,1595 @@
+<!doctype html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="CSS Grid zero to hero complete visual practice with Bangla comments."
+  />
+  <title>CSS Grid — Zero to Hero Complete Practice</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <main class="page">
+
+    <!-- ==========================================================
+         HERO — শুরুতেই পুরো Grid-এর মূল ধারণা
+         ========================================================== -->
+    <header class="hero">
+      <div>
+        <p class="eyebrow">CSS MASTER PRACTICE</p>
+        <h1>CSS Grid <span>Zero → Hero → Advanced</span></h1>
+        <p class="hero-text">
+          এই project-এর লক্ষ্য হলো Grid শুধু মুখস্থ না করে
+          <strong>দেখে, বদলে এবং ব্যবহার করে</strong> বোঝা।
+          প্রতিটি গুরুত্বপূর্ণ জায়গায় বলা আছে:
+          <strong>কেন ব্যবহার করেছি + কী ফল + কোথায় ব্যবহার হয়</strong>।
+        </p>
+      </div>
+
+      <div class="hero-rule">
+        <p>মূল ধারণা</p>
+        <div class="grid-room-demo">
+          <span class="line line-v1"></span>
+          <span class="line line-v2"></span>
+          <span class="line line-h1"></span>
+          <span class="line line-h2"></span>
+          <b>Rows + Columns = Grid</b>
+        </div>
+        <p>
+          Grid হলো এমন একটি layout system যেখানে
+          <strong>row (সারি)</strong> এবং <strong>column (কলাম)</strong>
+          বানিয়ে item-গুলোকে নির্দিষ্ট জায়গায় বসানো যায়।
+        </p>
+      </div>
+    </header>
+
+
+    <!-- ==========================================================
+         01 — GRID কী?
+         ========================================================== -->
+    <section class="section">
+      <div class="section-heading">
+        <span class="section-no">01</span>
+        <div>
+          <p class="label">FOUNDATION</p>
+          <h2>Grid আসলে কী?</h2>
+          <p class="section-intro">
+            আগে শুধু parent এবং child-এর সম্পর্ক বোঝো।
+          </p>
+        </div>
+      </div>
+
+      <div class="explain-layout">
+        <div class="visual-panel">
+          <p class="mini-label">HTML</p>
+          <pre><code>&lt;div class="grid"&gt;
+  &lt;div&gt;A&lt;/div&gt;
+  &lt;div&gt;B&lt;/div&gt;
+  &lt;div&gt;C&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+          <p class="mini-label space-top">CSS</p>
+          <pre><code>.grid {
+  display: grid;
+}</code></pre>
+
+          <div class="basic-grid">
+            <div>A</div>
+            <div>B</div>
+            <div>C</div>
+          </div>
+        </div>
+
+        <div class="text-panel">
+          <h3>এখানে কী হলো?</h3>
+          <p>
+            <code>display: grid;</code> দিলে parent element
+            <strong>grid container</strong> হয়ে যায়।
+            তার ভিতরের direct child-গুলো
+            <strong>grid item</strong> হিসেবে layout-এ অংশ নেয়।
+          </p>
+
+          <div class="summary">
+            <strong>সারমর্ম — এই জায়গার ব্যবহার</strong>
+            <p>
+              যখন parent-এর ভিতরে থাকা একাধিক item-কে
+              <strong>সারি ও কলামের নিয়মে সাজাতে</strong> চাই,
+              তখন parent-এ <code>display: grid;</code> ব্যবহার করি।
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="note-strip">
+        <strong>মনে রাখো:</strong>
+        Grid শুরু হয় parent-এ
+        <code>display: grid;</code>
+        দেওয়ার মাধ্যমে।
+      </div>
+    </section>
+
+
+    <!-- ==========================================================
+         02 — GRID CONTAINER বনাম GRID ITEM
+         ========================================================== -->
+    <section class="section">
+      <div class="section-heading">
+        <span class="section-no">02</span>
+        <div>
+          <p class="label">PARENT & CHILD</p>
+          <h2>Container আর Item চিনে রাখো</h2>
+        </div>
+      </div>
+
+      <div class="parent-child">
+        <div class="parent-box">
+          <div class="parent-title">GRID CONTAINER (Parent)</div>
+
+          <div class="mini-grid">
+            <div>Item 1</div>
+            <div>Item 2</div>
+            <div>Item 3</div>
+            <div>Item 4</div>
+          </div>
+        </div>
+
+        <div class="arrow-large">→</div>
+
+        <div class="definition-stack">
+          <div class="definition">
+            <strong>Grid Container</strong>
+            <p>
+              যে element-এ <code>display: grid</code> দেওয়া হয়েছে।
+            </p>
+          </div>
+          <div class="definition">
+            <strong>Grid Item</strong>
+            <p>
+              Grid container-এর <strong>direct child</strong>।
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="summary">
+        <strong>সারমর্ম — কেন এটা জানা জরুরি?</strong>
+        <p>
+          Grid-এর বেশিরভাগ property parent-এ কাজ করে,
+          আবার কিছু property child/item-এ কাজ করে।
+          তাই প্রথমে বুঝবে <strong>কে container, কে item</strong>।
+        </p>
+      </div>
+    </section>
+
+
+    <!-- ==========================================================
+         03 — grid-template-columns
+         ========================================================== -->
+    <section class="section">
+      <div class="section-heading">
+        <span class="section-no">03</span>
+        <div>
+          <p class="label">COLUMNS</p>
+          <h2><code>grid-template-columns</code></h2>
+          <p class="section-intro">
+            কতগুলো column থাকবে এবং প্রতিটির size কী হবে।
+          </p>
+        </div>
+      </div>
+
+      <div class="three-demos">
+
+        <article class="demo-card">
+          <h3>1) দুইটি সমান Column</h3>
+          <pre><code>grid-template-columns:
+  1fr 1fr;</code></pre>
+
+          <div class="columns-grid two">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+          </div>
+
+          <div class="summary small">
+            <strong>সারমর্ম</strong>
+            <p>
+              মোট available space দুই ভাগে ভাগ হয়।
+              প্রতিটি column সমান 1 অংশ নেয়।
+            </p>
+          </div>
+        </article>
+
+
+        <article class="demo-card">
+          <h3>2) তিনটি সমান Column</h3>
+          <pre><code>grid-template-columns:
+  1fr 1fr 1fr;</code></pre>
+
+          <div class="columns-grid three">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+          </div>
+
+          <div class="summary small">
+            <strong>সারমর্ম</strong>
+            <p>
+              জায়গাকে তিনটি সমান অংশে ভাগ করে।
+              Product/card layout-এ খুব common।
+            </p>
+          </div>
+        </article>
+
+
+        <article class="demo-card">
+          <h3>3) অসমান Column</h3>
+          <pre><code>grid-template-columns:
+  2fr 1fr;</code></pre>
+
+          <div class="columns-grid two-asym">
+            <div>2fr</div>
+            <div>1fr</div>
+          </div>
+
+          <div class="summary small">
+            <strong>সারমর্ম</strong>
+            <p>
+              দ্বিতীয়টির তুলনায় প্রথম column দ্বিগুণ
+              space পাবে।
+            </p>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+
+    <!-- ==========================================================
+         04 — px + fr + percentages
+         ========================================================== -->
+    <section class="section">
+      <div class="section-heading">
+        <span class="section-no">04</span>
+        <div>
+          <p class="label">TRACK SIZING</p>
+          <h2><code>px</code>, <code>fr</code>, <code>%</code></h2>
+          <p class="section-intro">
+            Grid-এ size দেওয়ার তিনটি গুরুত্বপূর্ণ ধরন।
+          </p>
+        </div>
+      </div>
+
+      <div class="sizing-grid">
+        <article class="size-card">
+          <h3><code>px</code></h3>
+          <pre><code>grid-template-columns:
+  200px 1fr;</code></pre>
+
+          <div class="px-demo">
+            <div>200px</div>
+            <div>বাকি জায়গা</div>
+          </div>
+
+          <div class="summary small">
+            <strong>সারমর্ম — কখন?</strong>
+            <p>
+              যখন একটি column-এর size নির্দিষ্ট রাখতে চাই,
+              যেমন sidebar 200px।
+            </p>
+          </div>
+        </article>
+
+        <article class="size-card">
+          <h3><code>fr</code></h3>
+          <pre><code>grid-template-columns:
+  1fr 2fr;</code></pre>
+
+          <div class="fr-demo">
+            <div>1fr</div>
+            <div>2fr</div>
+          </div>
+
+          <div class="summary small">
+            <strong>সারমর্ম — কখন?</strong>
+            <p>
+              Available space-কে অনুপাতে ভাগ করতে চাইলে
+              <code>fr</code> ব্যবহার করা হয়।
+            </p>
+          </div>
+        </article>
+
+        <article class="size-card">
+          <h3><code>%</code></h3>
+          <pre><code>grid-template-columns:
+  60% 40%;</code></pre>
+
+          <div class="percent-demo">
+            <div>60%</div>
+            <div>40%</div>
+          </div>
+
+          <div class="summary small">
+            <strong>সারমর্ম — কখন?</strong>
+            <p>
+              Container-এর width-এর percentage হিসেবে
+              track size দিতে পারো।
+            </p>
+          </div>
+        </article>
+      </div>
+
+      <div class="note-strip">
+        <strong>গুরুত্বপূর্ণ:</strong>
+        <code>fr</code> মানে “fraction of available space” —
+        অর্থাৎ available space-এর একটি অংশ।
+      </div>
+    </section>
+
+
+    <!-- ==========================================================
+         05 — repeat()
+         ========================================================== -->
+    <section class="section">
+      <div class="section-heading">
+        <span class="section-no">05</span>
+        <div>
+          <p class="label">SHORTCUT</p>
+          <h2><code>repeat()</code></h2>
+          <p class="section-intro">
+            একই track বারবার লিখতে হলে repeat() ব্যবহার করি।
+          </p>
+        </div>
+      </div>
+
+      <div class="code-explain">
+        <pre><code>grid-template-columns:
+  repeat(4, 1fr);</code></pre>
+
+        <div class="repeat-visual">
+          <div>1</div>
+          <div>2</div>
+          <div>3</div>
+          <div>4</div>
+        </div>
+      </div>
+
+      <div class="summary">
+        <strong>সারমর্ম — এই জায়গায় ব্যবহার</strong>
+        <p>
+          <code>1fr 1fr 1fr 1fr</code> না লিখে
+          <code>repeat(4, 1fr)</code> লিখে একই কাজ করা যায়।
+          অনেক card-এর grid বানাতে code পরিষ্কার থাকে।
+        </p>
+      </div>
+    </section>
+
+
+    <!-- ==========================================================
+         06 — gap
+         ========================================================== -->
+    <section class="section">
+      <div class="section-heading">
+        <span class="section-no">06</span>
+        <div>
+          <p class="label">SPACE</p>
+          <h2><code>gap</code>, <code>row-gap</code>, <code>column-gap</code></h2>
+        </div>
+      </div>
+
+      <div class="gap-demo-grid">
+        <article class="gap-card">
+          <h3><code>gap: 12px;</code></h3>
+          <div class="gap-example gap-one">
+            <div>A</div><div>B</div><div>C</div><div>D</div>
+          </div>
+          <div class="summary small">
+            <strong>সারমর্ম</strong>
+            <p>
+              Row ও column — দুই দিকেই একই gap।
+            </p>
+          </div>
+        </article>
+
+        <article class="gap-card">
+          <h3><code>column-gap: 28px;</code></h3>
+          <div class="gap-example gap-columns">
+            <div>A</div><div>B</div><div>C</div><div>D</div>
+          </div>
+          <div class="summary small">
+            <strong>সারমর্ম</strong>
+            <p>
+              শুধু column-এর মাঝের horizontal space।
+            </p>
+          </div>
+        </article>
+
+        <article class="gap-card">
+          <h3><code>row-gap: 28px;</code></h3>
+          <div class="gap-example gap-rows">
+            <div>A</div><div>B</div><div>C</div><div>D</div>
+          </div>
+          <div class="summary small">
+            <strong>সারমর্ম</strong>
+            <p>
+              শুধু row-এর মাঝের vertical space।
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+
+    <!-- ==========================================================
+         07 — explicit rows
+         ========================================================== -->
+    <section class="section">
+      <div class="section-heading">
+        <span class="section-no">07</span>
+        <div>
+          <p class="label">ROWS</p>
+          <h2><code>grid-template-rows</code></h2>
+          <p class="section-intro">
+            শুধু column নয়, row-এর size-ও define করা যায়।
+          </p>
+        </div>
+      </div>
+
+      <div class="rows-layout">
+        <div class="rows-demo">
+          <div class="r1">Header — 80px</div>
+          <div class="r2">Middle — 1fr</div>
+          <div class="r3">Footer — 60px</div>
+        </div>
+
+        <div>
+          <pre><code>.layout {
+  display: grid;
+
+  grid-template-rows:
+    80px 1fr 60px;
+}</code></pre>
+
+          <div class="summary">
+            <strong>সারমর্ম — কেন ব্যবহার করব?</strong>
+            <p>
+              Dashboard বা page skeleton-এ
+              header, main, footer-এর height relationship
+              আগে থেকে control করতে চাইলে এটি useful।
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ==========================================================
+         08 — grid lines
+         ========================================================== -->
+    <section class="section">
+      <div class="section-heading">
+        <span class="section-no">08</span>
+        <div>
+          <p class="label">GRID LINES</p>
+          <h2>Grid line কী?</h2>
+          <p class="section-intro">
+            Grid-এর প্রত্যেক track-এর মাঝখানের line-গুলো দিয়ে item position করা যায়।
+          </p>
+        </div>
+      </div>
+
+      <div class="line-demo-wrap">
+        <div class="line-grid">
+          <span class="v-label l1">1</span>
+          <span class="v-label l2">2</span>
+          <span class="v-label l3">3</span>
+          <span class="v-label l4">4</span>
+
+          <span class="h-label h1">1</span>
+          <span class="h-label h2">2</span>
+          <span class="h-label h3">3</span>
+
+          <div class="line-item item-one">Column 1→2<br>Row 1→2</div>
+          <div class="line-item item-two">Column 2→4<br>Row 1→3</div>
+          <div class="line-item item-three">Column 1→3<br>Row 2→3</div>
+        </div>
+
+        <pre><code>grid-column: 2 / 4;
+grid-row: 1 / 3;
+
+/*
+  শুরু line = 2
+  শেষ line  = 4
+*/</code></pre>
+      </div>
+
+      <div class="summary">
+        <strong>সারমর্ম — এখানে আসল ব্যবহার</strong>
+        <p>
+          Grid-এর line number ধরে child-কে
+          <strong>ঠিক কোন column থেকে কোন column পর্যন্ত</strong>
+          এবং <strong>কোন row থেকে কোন row পর্যন্ত</strong>
+          রাখব, সেটা control করা যায়।
+        </p>
+      </div>
+    </section>
+
+
+    <!-- ==========================================================
+         09 — grid-column / grid-row
+         ========================================================== -->
+    <section class="section">
+      <div class="section-heading">
+        <span class="section-no">09</span>
+        <div>
+          <p class="label">PLACEMENT</p>
+          <h2><code>grid-column</code> ও <code>grid-row</code></h2>
+        </div>
+      </div>
+
+      <div class="placement-demo">
+        <div class="placement-grid">
+          <div class="p-item p-a">A<br><small>1 / 2</small></div>
+          <div class="p-item p-b">B<br><small>2 / 4</small></div>
+          <div class="p-item p-c">C<br><small>Row 2→3</small></div>
+          <div class="p-item p-d">D</div>
+        </div>
+
+        <pre><code>.featured {
+  grid-column: 2 / 4;
+  grid-row: 1 / 2;
+}</code></pre>
+      </div>
+
+      <div class="summary">
+        <strong>সারমর্ম — কখন?</strong>
+        <p>
+          কোনো একটি card বা section-কে normal auto placement-এর বদলে
+          <strong>নিজের নির্দিষ্ট জায়গায়</strong> বসাতে।
+          Magazine layout, dashboard, hero section ইত্যাদিতে খুব useful।
+        </p>
+      </div>
+    </section>
+
+
+    <!-- ==========================================================
+         10 — span
+         ========================================================== -->
+    <section class="section">
+      <div class="section-heading">
+        <span class="section-no">10</span>
+        <div>
+          <p class="label">SPAN</p>
+          <h2><code>span</code></h2>
+          <p class="section-intro">
+            Start/end line number না লিখেও কত track জুড়ে থাকবে বলা যায়।
+          </p>
+        </div>
+      </div>
+
+      <div class="span-layout">
+        <div class="span-grid">
+          <div>1</div>
+          <div class="span-two">span 2</div>
+          <div>4</div>
+          <div class="span-three">span 3</div>
+          <div>8</div>
+        </div>
+
+        <pre><code>.box {
+  grid-column: span 2;
+}
+
+/* মানে:
+   বর্তমান জায়গা থেকে
+   2টি column জুড়ে থাকো
+*/</code></pre>
+      </div>
+
+      <div class="summary">
+        <strong>সারমর্ম</strong>
+        <p>
+          <code>span 2</code> = দুইটি column জুড়ে যাও।
+          <code>span 3</code> = তিনটি column জুড়ে যাও।
+          Card বড় করার সবচেয়ে সহজ Grid techniques-এর একটি।
+        </p>
+      </div>
+    </section>
+
+
+    <!-- ==========================================================
+         11 — grid-area
+         ========================================================== -->
+    <section class="section">
+      <div class="section-heading">
+        <span class="section-no">11</span>
+        <div>
+          <p class="label">AREA</p>
+          <h2><code>grid-area</code></h2>
+          <p class="section-intro">
+            একসঙ্গে row + column position লিখতে পারো।
+          </p>
+        </div>
+      </div>
+
+      <div class="area-demo">
+        <div class="area-grid">
+          <div class="area-header">HEADER</div>
+          <div class="area-sidebar">SIDEBAR</div>
+          <div class="area-main">MAIN</div>
+          <div class="area-footer">FOOTER</div>
+        </div>
+
+        <pre><code>.header {
+  grid-area: header;
+}
+
+.sidebar {
+  grid-area: sidebar;
+}
+
+.main {
+  grid-area: main;
+}
+
+.footer {
+  grid-area: footer;
+}</code></pre>
+      </div>
+
+      <div class="summary">
+        <strong>সারমর্ম — কেন খুব useful?</strong>
+        <p>
+          বড় layout-এর structure নাম দিয়ে পড়া যায়।
+          ফলে complex dashboard/page layout অনেক বেশি readable হয়।
+        </p>
+      </div>
+    </section>
+
+
+    <!-- ==========================================================
+         12 — grid-template-areas
+         ========================================================== -->
+    <section class="section featured-section">
+      <div class="section-heading">
+        <span class="section-no">12</span>
+        <div>
+          <p class="label">ADVANCED LAYOUT</p>
+          <h2><code>grid-template-areas</code></h2>
+          <p class="section-intro">
+            Layout-কে text map-এর মতো লিখে structure বানানো যায়।
+          </p>
+        </div>
+      </div>
+
+      <div class="area-code">
+        <pre><code>.page {
+  display: grid;
+
+  grid-template-areas:
+    "header  header"
+    "sidebar main"
+    "footer  footer";
+}</code></pre>
+
+        <div class="area-map">
+          <div class="map-header">HEADER</div>
+          <div class="map-sidebar">SIDEBAR</div>
+          <div class="map-main">MAIN</div>
+          <div class="map-footer">FOOTER</div>
+        </div>
+      </div>
+
+      <div class="summary">
+        <strong>সারমর্ম — কখন?</strong>
+        <p>
+          Page বা dashboard-এর বড় structure চোখে দেখা ও code-এ
+          সহজে বোঝানোর জন্য। HTML element-কে meaningful named area-এর
+          সঙ্গে connect করা যায়।
+        </p>
+      </div>
+    </section>
+
+
+    <!-- ==========================================================
+         13 — items alignment
+         ========================================================== -->
+    <section class="section">
+      <div class="section-heading">
+        <span class="section-no">13</span>
+        <div>
+          <p class="label">ALIGNMENT</p>
+          <h2><code>justify-items</code>, <code>align-items</code>, <code>place-items</code></h2>
+          <p class="section-intro">
+            প্রতিটি grid cell-এর ভিতরে item কোথায় থাকবে।
+          </p>
+        </div>
+      </div>
+
+      <div class="align-demo-grid">
+        <article class="align-card">
+          <h3><code>justify-items</code></h3>
+          <div class="align-stage justify-items-demo">
+            <div>A</div>
+            <div>B</div>
+          </div>
+          <p>Horizontal direction-এ cell-এর ভিতরে item align করে।</p>
+        </article>
+
+        <article class="align-card">
+          <h3><code>align-items</code></h3>
+          <div class="align-stage align-items-demo">
+            <div>A</div>
+            <div>B</div>
+          </div>
+          <p>Vertical direction-এ cell-এর ভিতরে item align করে।</p>
+        </article>
+
+        <article class="align-card">
+          <h3><code>place-items</code></h3>
+          <div class="align-stage place-items-demo">
+            <div>A</div>
+            <div>B</div>
+          </div>
+          <p>একসঙ্গে row + column-এর alignment shorthand।</p>
+        </article>
+      </div>
+
+      <pre><code>place-items: center;
+
+/* অর্থ:
+   align-items: center;
+   justify-items: center;
+*/</code></pre>
+
+      <div class="summary">
+        <strong>সারমর্ম — খুব সহজ মনে রাখো</strong>
+        <p>
+          <code>justify-items</code> = horizontal,
+          <code>align-items</code> = vertical,
+          <code>place-items</code> = দুটো একসঙ্গে।
+        </p>
+      </div>
+    </section>
+
+
+    <!-- ==========================================================
+         14 — content alignment
+         ========================================================== -->
+    <section class="section">
+      <div class="section-heading">
+        <span class="section-no">14</span>
+        <div>
+          <p class="label">WHOLE GRID</p>
+          <h2><code>justify-content</code>, <code>align-content</code>, <code>place-content</code></h2>
+          <p class="section-intro">
+            এবার item নয় — পুরো grid-এর track-গুলো container-এর ভিতরে কোথায় থাকবে।
+          </p>
+        </div>
+      </div>
+
+      <div class="content-align-grid">
+        <article>
+          <h3><code>justify-content: center</code></h3>
+          <div class="content-stage justify-content-demo">
+            <div>1</div><div>2</div><div>3</div><div>4</div>
+          </div>
+        </article>
+
+        <article>
+          <h3><code>align-content: center</code></h3>
+          <div class="content-stage align-content-demo">
+            <div>1</div><div>2</div><div>3</div><div>4</div>
+          </div>
+        </article>
+
+        <article>
+          <h3><code>place-content: center</code></h3>
+          <div class="content-stage place-content-demo">
+            <div>1</div><div>2</div><div>3</div><div>4</div>
+          </div>
+        </article>
+      </div>
+
+      <div class="summary">
+        <strong>সারমর্ম — পার্থক্য</strong>
+        <p>
+          <code>*-items</code> → cell-এর ভিতরে item।
+          <br>
+          <code>*-content</code> → পুরো grid/track-এর অবস্থান।
+        </p>
+      </div>
+    </section>
+
+
+    <!-- ==========================================================
+         15 — align-self / justify-self
+         ========================================================== -->
+    <section class="section">
+      <div class="section-heading">
+        <span class="section-no">15</span>
+        <div>
+          <p class="label">INDIVIDUAL ITEM</p>
+          <h2><code>justify-self</code>, <code>align-self</code>, <code>place-self</code></h2>
+        </div>
+      </div>
+
+      <div class="self-demo">
+        <div class="self-stage">
+          <div class="self-a">A</div>
+          <div class="self-b">B</div>
+          <div class="self-c">C</div>
+        </div>
+
+        <pre><code>.b {
+  justify-self: end;
+}
+
+.c {
+  align-self: end;
+}
+
+/* Individual item-এর
+   alignment আলাদাভাবে বদলানো */
+</code></pre>
+      </div>
+
+      <div class="summary">
+        <strong>সারমর্ম</strong>
+        <p>
+          Parent-এর <code>justify-items</code>/<code>align-items</code>
+          সব item-কে affect করে। কিন্তু
+          <code>justify-self</code>/<code>align-self</code> শুধু
+          <strong>একটি নির্দিষ্ট item</strong>-কে affect করে।
+        </p>
+      </div>
+    </section>
+
+
+    <!-- ==========================================================
+         16 — auto placement
+         ========================================================== -->
+    <section class="section">
+      <div class="section-heading">
+        <span class="section-no">16</span>
+        <div>
+          <p class="label">AUTO PLACEMENT</p>
+          <h2>Grid নিজে item কোথায় বসায়?</h2>
+          <p class="section-intro">
+            Placement না বললে Grid default rule অনুসরণ করে।
+          </p>
+        </div>
+      </div>
+
+      <div class="auto-demo">
+        <div class="auto-grid">
+          <div>1</div>
+          <div>2</div>
+          <div>3</div>
+          <div>4</div>
+          <div>5</div>
+          <div>6</div>
+        </div>
+
+        <div>
+          <pre><code>.grid {
+  display: grid;
+  grid-template-columns:
+    repeat(3, 1fr);
+}
+
+/* child-গুলো সাধারণত
+   row ধরে বাম → ডানে বসে */
+</code></pre>
+
+          <div class="summary">
+            <strong>সারমর্ম</strong>
+            <p>
+              তুমি placement না দিলে Grid available cells অনুযায়ী
+              item-গুলোকে auto place করে।
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ==========================================================
+         17 — grid-auto-flow
+         ========================================================== -->
+    <section class="section">
+      <div class="section-heading">
+        <span class="section-no">17</span>
+        <div>
+          <p class="label">FLOW</p>
+          <h2><code>grid-auto-flow</code></h2>
+        </div>
+      </div>
+
+      <div class="flow-grid">
+
+        <article>
+          <h3><code>row</code> (default)</h3>
+          <div class="flow-stage flow-row">
+            <div>1</div><div>2</div><div>3</div>
+            <div>4</div><div>5</div><div>6</div>
+          </div>
+          <div class="summary small">
+            <strong>সারমর্ম</strong>
+            <p>
+              প্রথমে row পূরণ করে, তারপর পরের row।
+            </p>
+          </div>
+        </article>
+
+        <article>
+          <h3><code>column</code></h3>
+          <div class="flow-stage flow-column">
+            <div>1</div><div>2</div><div>3</div>
+            <div>4</div><div>5</div><div>6</div>
+          </div>
+          <div class="summary small">
+            <strong>সারমর্ম</strong>
+            <p>
+              প্রথমে column ধরে item বসায়।
+            </p>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+
+    <!-- ==========================================================
+         18 — implicit grid / auto rows / auto columns
+         ========================================================== -->
+    <section class="section">
+      <div class="section-heading">
+        <span class="section-no">18</span>
+        <div>
+          <p class="label">IMPLICIT GRID</p>
+          <h2><code>grid-auto-rows</code> / <code>grid-auto-columns</code></h2>
+          <p class="section-intro">
+            তুমি যতগুলো row/column explicitly define করোনি, নতুন track তৈরি হলে তার size নিয়ন্ত্রণ করা যায়।
+          </p>
+        </div>
+      </div>
+
+      <div class="implicit-demo">
+        <div class="implicit-grid">
+          <div>1</div><div>2</div><div>3</div>
+          <div>4</div><div>5</div><div>6</div>
+        </div>
+
+        <pre><code>.grid {
+  display: grid;
+  grid-template-columns:
+    repeat(2, 1fr);
+
+  /* তৈরি হওয়া extra row-এর
+     height 90px করে */
+  grid-auto-rows: 90px;
+}</code></pre>
+      </div>
+
+      <div class="summary">
+        <strong>সারমর্ম — কেন?</strong>
+        <p>
+          Grid-এ তোমার item-এর সংখ্যা পরে বাড়তে পারে।
+          তখন নতুন implicit row/column কী size হবে,
+          সেটি control করতে <code>grid-auto-rows</code>
+          বা <code>grid-auto-columns</code> ব্যবহার করা যায়।
+        </p>
+      </div>
+    </section>
+
+
+    <!-- ==========================================================
+         19 — auto-fit / auto-fill / minmax
+         ========================================================== -->
+    <section class="section featured-section">
+      <div class="section-heading">
+        <span class="section-no">19</span>
+        <div>
+          <p class="label">RESPONSIVE GRID</p>
+          <h2><code>minmax()</code> + <code>auto-fit</code> + <code>auto-fill</code></h2>
+          <p class="section-intro">
+            Responsive card grid বানানোর সবচেয়ে useful pattern-গুলোর একটি।
+          </p>
+        </div>
+      </div>
+
+      <div class="responsive-card-demo">
+        <div>
+          <pre><code>.cards {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      auto-fit,
+      minmax(180px, 1fr)
+    );
+}</code></pre>
+
+          <div class="summary">
+            <strong>সারমর্ম — প্রতিটি অংশের কাজ</strong>
+            <p>
+              <code>minmax(180px, 1fr)</code>:
+              প্রতিটি card <strong>180px-এর নিচে যেতে পারবে না</strong>,
+              কিন্তু প্রয়োজন হলে available space-এর অংশ হিসেবে বড় হতে পারবে।
+            </p>
+            <p>
+              <code>auto-fit</code>:
+              যতগুলো column সুন্দরভাবে fit করতে পারে,
+              Grid সেই অনুযায়ী arrangement করে।
+            </p>
+          </div>
+        </div>
+
+        <div class="auto-fit-grid">
+          <div class="pretty-card"><span>01</span><b>HTML</b></div>
+          <div class="pretty-card"><span>02</span><b>CSS</b></div>
+          <div class="pretty-card"><span>03</span><b>JS</b></div>
+          <div class="pretty-card"><span>04</span><b>React</b></div>
+          <div class="pretty-card"><span>05</span><b>API</b></div>
+          <div class="pretty-card"><span>06</span><b>Git</b></div>
+        </div>
+      </div>
+
+      <div class="sub-difference">
+        <div>
+          <h3><code>auto-fit</code></h3>
+          <p>
+            সাধারণভাবে available space অনুযায়ী fit হওয়া column-গুলোকে
+            stretch করে দিতে সাহায্য করে।
+          </p>
+        </div>
+
+        <div>
+          <h3><code>auto-fill</code></h3>
+          <p>
+            যতগুলো minimum-size track fit হতে পারে,
+            তাদের জন্য track রাখার ধারণা ধরে।
+          </p>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ==========================================================
+         20 — minmax only
+         ========================================================== -->
+    <section class="section">
+      <div class="section-heading">
+        <span class="section-no">20</span>
+        <div>
+          <p class="label">CONTROL</p>
+          <h2><code>minmax()</code></h2>
+        </div>
+      </div>
+
+      <div class="minmax-layout">
+        <div class="minmax-visual">
+          <div class="minmax-item">min 160px<br>max 1fr</div>
+          <div class="minmax-item">min 160px<br>max 1fr</div>
+          <div class="minmax-item">min 160px<br>max 1fr</div>
+        </div>
+
+        <pre><code>grid-template-columns:
+  repeat(
+    3,
+    minmax(160px, 1fr)
+  );</code></pre>
+      </div>
+
+      <div class="summary">
+        <strong>সারমর্ম</strong>
+        <p>
+          <code>minmax(min, max)</code> দিয়ে বলি:
+          “এই track <strong>এত ছোটের নিচে যেও না</strong>,
+          কিন্তু প্রয়োজন হলে <strong>এত পর্যন্ত বড় হতে পারো</strong>।”
+        </p>
+      </div>
+    </section>
+
+
+    <!-- ==========================================================
+         21 — dense
+         ========================================================== -->
+    <section class="section">
+      <div class="section-heading">
+        <span class="section-no">21</span>
+        <div>
+          <p class="label">AUTO PLACEMENT ADVANCED</p>
+          <h2><code>grid-auto-flow: dense</code></h2>
+        </div>
+      </div>
+
+      <div class="dense-demo">
+        <div class="dense-before">
+          <h3>Normal</h3>
+          <div class="dense-grid">
+            <div class="big">Big</div>
+            <div>A</div>
+            <div>B</div>
+            <div>C</div>
+            <div>D</div>
+          </div>
+        </div>
+
+        <div class="dense-after">
+          <h3><code>dense</code></h3>
+          <div class="dense-grid dense-mode">
+            <div class="big">Big</div>
+            <div>A</div>
+            <div>B</div>
+            <div>C</div>
+            <div>D</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="summary">
+        <strong>সারমর্ম — কখন?</strong>
+        <p>
+          Item placement-এর কারণে কোনো ফাঁকা cell তৈরি হলে,
+          <code>dense</code> Grid-কে পরে আসা ছোট item দিয়ে
+          সেই ফাঁক পূরণ করার চেষ্টা করতে দেয়।
+          Gallery/masonry-like arrangements-এ useful হতে পারে,
+          তবে visual order নিয়ে সচেতন থাকতে হবে।
+        </p>
+      </div>
+    </section>
+
+
+    <!-- ==========================================================
+         22 — nested grid
+         ========================================================== -->
+    <section class="section">
+      <div class="section-heading">
+        <span class="section-no">22</span>
+        <div>
+          <p class="label">NESTING</p>
+          <h2>Grid-এর ভিতরে আবার Grid</h2>
+        </div>
+      </div>
+
+      <div class="nested-demo">
+        <div class="outer-grid">
+          <div class="outer-item">Parent Grid</div>
+
+          <div class="nested-grid">
+            <div>Child A</div>
+            <div>Child B</div>
+            <div>Child C</div>
+            <div>Child D</div>
+          </div>
+        </div>
+
+        <div>
+          <pre><code>.outer {
+  display: grid;
+}
+
+.nested {
+  display: grid;
+  grid-template-columns:
+    repeat(2, 1fr);
+}</code></pre>
+
+          <div class="summary">
+            <strong>সারমর্ম</strong>
+            <p>
+              বড় page-কে ছোট ছোট independent grid layout-এ ভাগ করতে পারো।
+              Real website-এর section/card group-এ এটি খুব common।
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ==========================================================
+         23 — real dashboard project
+         ========================================================== -->
+    <section class="section project-section">
+      <div class="section-heading">
+        <span class="section-no">23</span>
+        <div>
+          <p class="label">REAL PROJECT</p>
+          <h2>একটি Real Dashboard Layout</h2>
+          <p class="section-intro">
+            এখন আগের concepts একসঙ্গে ব্যবহার করা হলো।
+          </p>
+        </div>
+      </div>
+
+      <div class="dashboard">
+        <aside class="dashboard-sidebar">
+          <div class="brand">GRID<span>.</span></div>
+          <a href="#">Overview</a>
+          <a href="#">Analytics</a>
+          <a href="#">Projects</a>
+          <a href="#">Settings</a>
+        </aside>
+
+        <div class="dashboard-main">
+          <header class="dashboard-header">
+            <div>
+              <p class="mini-label">TODAY</p>
+              <h3>Dashboard</h3>
+            </div>
+            <span class="live">● Live</span>
+          </header>
+
+          <div class="stats-grid">
+            <div class="stat-card large">
+              <span>Revenue</span>
+              <strong>$24.8K</strong>
+            </div>
+            <div class="stat-card">
+              <span>Users</span>
+              <strong>12.4K</strong>
+            </div>
+            <div class="stat-card">
+              <span>Orders</span>
+              <strong>1,842</strong>
+            </div>
+            <div class="chart-card">
+              <span>Weekly activity</span>
+              <div class="fake-chart">
+                <i style="height:35%"></i>
+                <i style="height:52%"></i>
+                <i style="height:42%"></i>
+                <i style="height:70%"></i>
+                <i style="height:58%"></i>
+                <i style="height:86%"></i>
+                <i style="height:64%"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <pre><code>/* বাস্তব dashboard-এর বড় structure */
+
+.dashboard {
+  display: grid;
+
+  grid-template-columns:
+    190px 1fr;
+
+  min-height: 520px;
+}
+
+.stats-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  gap: 14px;
+}
+
+.large {
+  grid-column: span 2;
+}
+
+.chart-card {
+  grid-column: span 4;
+}</code></pre>
+
+      <div class="summary">
+        <strong>সারমর্ম — Grid এখানে কেন?</strong>
+        <p>
+          Sidebar + main content + statistics + বড় chart —
+          এই ধরনের 2D layout-এ Grid খুব পরিষ্কারভাবে structure control করতে পারে।
+          <code>span</code>, <code>fr</code>, <code>gap</code>,
+          responsive columns — সব একসঙ্গে ব্যবহার হয়েছে।
+        </p>
+      </div>
+    </section>
+
+
+    <!-- ==========================================================
+         24 — Grid vs Flex
+         ========================================================== -->
+    <section class="section">
+      <div class="section-heading">
+        <span class="section-no">24</span>
+        <div>
+          <p class="label">GRID VS FLEX</p>
+          <h2>কখন Grid, কখন Flex?</h2>
+        </div>
+      </div>
+
+      <div class="vs-grid">
+        <article>
+          <h3>Grid</h3>
+          <div class="vs-visual grid-vs">
+            <div>1</div><div>2</div><div>3</div><div>4</div>
+          </div>
+          <p>
+            Rows + Columns — অর্থাৎ <strong>2D layout</strong> control করতে খুব ভালো।
+          </p>
+        </article>
+
+        <article>
+          <h3>Flexbox</h3>
+          <div class="vs-visual flex-vs">
+            <div>1</div><div>2</div><div>3</div><div>4</div>
+          </div>
+          <p>
+            সাধারণত এক direction — row অথবা column —
+            অর্থাৎ <strong>1D layout</strong>-এ খুব ভালো।
+          </p>
+        </article>
+      </div>
+
+      <div class="summary">
+        <strong>সারমর্ম</strong>
+        <p>
+          Page/card layout-এ দুটোই পাশাপাশি ব্যবহার করা যায়।
+          Grid দিয়ে বড় structure, Flex দিয়ে ছোট internal alignment —
+          এই combination বাস্তব project-এ খুব common।
+        </p>
+      </div>
+    </section>
+
+
+    <!-- ==========================================================
+         25 — common mistakes
+         ========================================================== -->
+    <section class="section">
+      <div class="section-heading">
+        <span class="section-no">25</span>
+        <div>
+          <p class="label">COMMON MISTAKES</p>
+          <h2>যে ভুলগুলো করলে Grid বুঝতে সমস্যা হবে</h2>
+        </div>
+      </div>
+
+      <div class="mistake-grid">
+        <article class="mistake">
+          <b>01</b>
+          <h3>Direct child না</h3>
+          <p>
+            Grid container-এর grandchild সরাসরি grid item নয়।
+          </p>
+          <div class="summary small">
+            <strong>সারমর্ম</strong>
+            <p>
+              আগে parent-child relationship দেখো।
+            </p>
+          </div>
+        </article>
+
+        <article class="mistake">
+          <b>02</b>
+          <h3>Items আর Content গুলিয়ে ফেলা</h3>
+          <p>
+            <code>justify-items</code> আর
+            <code>justify-content</code> এক জিনিস নয়।
+          </p>
+          <div class="summary small">
+            <strong>সারমর্ম</strong>
+            <p>
+              items = cell-এর ভিতর, content = পুরো grid।
+            </p>
+          </div>
+        </article>
+
+        <article class="mistake">
+          <b>03</b>
+          <h3>1fr-কে 1px ভাবা</h3>
+          <p>
+            <code>fr</code> কোনো fixed pixel নয়; available space-এর fraction।
+          </p>
+          <div class="summary small">
+            <strong>সারমর্ম</strong>
+            <p>
+              Available space বদলালে fr-এর size-ও বদলায়।
+            </p>
+          </div>
+        </article>
+
+        <article class="mistake">
+          <b>04</b>
+          <h3>Mobile না ভেবে fixed columns</h3>
+          <p>
+            5 বা 6 fixed columns ছোট screen-এ সমস্যা করতে পারে।
+          </p>
+          <div class="summary small">
+            <strong>সারমর্ম</strong>
+            <p>
+              Responsive grid-এ minmax + auto-fit ব্যবহার শেখো।
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+
+    <!-- ==========================================================
+         26 — change and observe
+         ========================================================== -->
+    <section class="section experiment-section">
+      <div class="section-heading">
+        <span class="section-no">26</span>
+        <div>
+          <p class="label">EXPERIMENT</p>
+          <h2>নিজে বদলে দেখো</h2>
+          <p class="section-intro">
+            এই অংশটি না বদলালে Grid-এর আসল শক্তি পুরোপুরি বোঝা যাবে না।
+          </p>
+        </div>
+      </div>
+
+      <div class="experiment-board">
+        <div class="experiment-target">
+          <div>1</div>
+          <div>2</div>
+          <div>3</div>
+          <div>4</div>
+          <div>5</div>
+          <div>6</div>
+        </div>
+
+        <div>
+          <p class="mini-label">style.css-এ এটি খুঁজে বদলাও</p>
+
+          <pre><code>.experiment-target {
+  display: grid;
+  grid-template-columns:
+    repeat(3, 1fr);
+  gap: 12px;
+}</code></pre>
+
+          <div class="change-list">
+            <code>repeat(2, 1fr)</code>
+            <code>repeat(4, 1fr)</code>
+            <code>1fr 2fr 1fr</code>
+            <code>100px 1fr 1fr</code>
+            <code>repeat(auto-fit, minmax(100px, 1fr))</code>
+          </div>
+
+          <div class="summary">
+            <strong>সারমর্ম — কী শিখবে?</strong>
+            <p>
+              শুধু syntax দেখলে Grid মুখস্থ হয়;
+              value বদলালে <strong>Grid কীভাবে layout হিসাব করে</strong>
+              সেটা বোঝা যায়।
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ==========================================================
+         27 — complete cheat sheet
+         ========================================================== -->
+    <section class="final-note">
+      <p class="eyebrow">KHATA NOTE</p>
+      <h2>Grid — Complete Summary</h2>
+
+      <div class="cheat-sheet">
+
+        <div class="cheat-row">
+          <code>display: grid;</code>
+          <span>Parent-কে grid container বানায়।</span>
+        </div>
+
+        <div class="cheat-row">
+          <code>grid-template-columns</code>
+          <span>কতগুলো column + তাদের size ঠিক করে।</span>
+        </div>
+
+        <div class="cheat-row">
+          <code>grid-template-rows</code>
+          <span>কতগুলো row + তাদের size ঠিক করে।</span>
+        </div>
+
+        <div class="cheat-row">
+          <code>fr</code>
+          <span>Available space-এর fraction।</span>
+        </div>
+
+        <div class="cheat-row">
+          <code>repeat()</code>
+          <span>একই track বারবার লেখার shortcut।</span>
+        </div>
+
+        <div class="cheat-row">
+          <code>gap</code>
+          <span>Rows ও columns-এর মাঝের space।</span>
+        </div>
+
+        <div class="cheat-row">
+          <code>grid-column / grid-row</code>
+          <span>Item কোন line থেকে কোন line পর্যন্ত থাকবে।</span>
+        </div>
+
+        <div class="cheat-row">
+          <code>span</code>
+          <span>কতগুলো track জুড়ে থাকবে।</span>
+        </div>
+
+        <div class="cheat-row">
+          <code>grid-template-areas</code>
+          <span>নাম দিয়ে বড় layout structure বানানো।</span>
+        </div>
+
+        <div class="cheat-row">
+          <code>justify-items / align-items</code>
+          <span>প্রতিটি cell-এর ভিতরে item-এর alignment।</span>
+        </div>
+
+        <div class="cheat-row">
+          <code>justify-content / align-content</code>
+          <span>পুরো grid-এর track-এর alignment।</span>
+        </div>
+
+        <div class="cheat-row">
+          <code>justify-self / align-self</code>
+          <span>একটি নির্দিষ্ট item-এর alignment।</span>
+        </div>
+
+        <div class="cheat-row">
+          <code>grid-auto-flow</code>
+          <span>Auto placement কোন direction-এ হবে।</span>
+        </div>
+
+        <div class="cheat-row">
+          <code>grid-auto-rows / columns</code>
+          <span>Implicit track-এর size control করে।</span>
+        </div>
+
+        <div class="cheat-row">
+          <code>minmax()</code>
+          <span>Track-এর minimum ও maximum size নির্ধারণ করে।</span>
+        </div>
+
+        <div class="cheat-row">
+          <code>auto-fit / auto-fill</code>
+          <span>Responsive automatic columns-এর pattern।</span>
+        </div>
+
+        <div class="cheat-row">
+          <code>nested grid</code>
+          <span>Grid-এর ভিতরে আবার independent grid বানানো।</span>
+        </div>
+      </div>
+
+      <div class="final-memory">
+        <strong>এক লাইনে Grid:</strong>
+        <span>
+          Grid = <code>Rows + Columns + Placement + Alignment</code>
+          — বড় 2D layout control করার জন্য।
+        </span>
+      </div>
+
+      <div class="completion-box">
+        <strong>এই project শেষ করার নিয়ম:</strong>
+        <p>
+          প্রথম থেকে শেষ পর্যন্ত দেখে নাও → তারপর Experiment section-এর
+          সব value নিজে বদলাও → তারপর Dashboard section-এর code দেখে
+          নিজের একটি ছোট layout বানাও।
+        </p>
+        <p>
+          তখন Grid-এর property শুধু মুখস্থ নয়,
+          <strong>কেন, কোথায় এবং কীভাবে ব্যবহার করতে হয়</strong>
+          সেটাও clear হবে।
+        </p>
+      </div>
+    </section>
+
+  </main>
+</body>
+</html>

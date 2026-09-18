@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>isolation: isolate — Easy Demo</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; padding: 30px 18px; min-height: 100vh;
+      font-family: Arial, sans-serif; background: #f3f4f6; color: #111827;
+    }
+    .page { width: min(900px, 100%); margin: auto; }
+    h1 { margin: 0 0 8px; }
+    .intro { margin-top: 0; color: #4b5563; line-height: 1.6; }
+    .box {
+      background: white; border: 1px solid #d1d5db; border-radius: 16px;
+      padding: 24px; margin-top: 24px;
+    }
+    .scene {
+      position: relative; height: 330px; margin-top: 18px;
+      border: 2px dashed #9ca3af; border-radius: 12px; overflow: hidden;
+      background: #fafafa;
+    }
+    .card {
+      position: absolute; left: 35px; top: 70px; width: 250px; height: 180px;
+      padding: 18px; background: #60a5fa; border: 3px solid #1e3a8a;
+      font-weight: bold;
+      isolation: isolate;
+    }
+    .card::before {
+      content: ""; position: absolute; inset: 25px;
+      background: #f472b6; border: 3px solid #9d174d; z-index: -1;
+    }
+    .card-content {
+      position: relative; z-index: 1; margin-top: 45px; padding: 10px;
+      background: rgba(255,255,255,.85); border-radius: 7px;
+    }
+    .outside {
+      position: absolute; right: 35px; top: 70px; width: 250px; height: 180px;
+      padding: 18px; background: #fbbf24; border: 3px solid #92400e;
+      font-weight: bold; z-index: 1;
+    }
+    .outside-content {
+      margin-top: 45px; padding: 10px; background: rgba(255,255,255,.85); border-radius: 7px;
+    }
+    .code {
+      margin-top: 20px; padding: 18px; border-radius: 10px;
+      background: #111827; color: #e5e7eb; line-height: 1.7; overflow-x: auto;
+    }
+    .explain {
+      margin-top: 18px; padding: 16px; border-left: 5px solid #2563eb;
+      background: #eff6ff; line-height: 1.7;
+    }
+    button {
+      margin-top: 15px; border: 0; border-radius: 8px; padding: 11px 16px;
+      background: #2563eb; color: white; font-weight: bold; cursor: pointer;
+    }
+    .note { margin-top: 14px; color: #374151; }
+    .scene.is-off .card { isolation: auto; }
+    @media (max-width: 650px) {
+      .scene { height: 500px; }
+      .card { left: 20px; top: 30px; }
+      .outside { right: 20px; top: 260px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <h1>isolation: isolate;</h1>
+    <p class="intro">
+      এই demo-তে Card-এর ভিতরের <strong>::before</strong> layer কীভাবে
+      আলাদা stacking context-এর মধ্যে থাকে সেটা দেখো।
+    </p>
+
+    <section class="box">
+      <h2>চোখে দেখে বুঝো</h2>
+      <div class="scene" id="scene">
+        <div class="card">
+          CARD
+          <div class="card-content">
+            এই pink অংশটি<br><strong>::before layer</strong>
+          </div>
+        </div>
+        <div class="outside">
+          OUTSIDE ELEMENT
+          <div class="outside-content">আমি Card-এর বাইরে</div>
+        </div>
+      </div>
+
+      <button id="toggleButton">Isolation OFF করে দেখো</button>
+      <p class="note" id="status">এখন <strong>isolation: isolate;</strong> ON আছে।</p>
+
+      <div class="code">
+        .card {<br>
+        &nbsp;&nbsp;position: relative;<br>
+        &nbsp;&nbsp;<strong>isolation: isolate;</strong><br>
+        }<br><br>
+        .card::before {<br>
+        &nbsp;&nbsp;content: "";<br>
+        &nbsp;&nbsp;position: absolute;<br>
+        &nbsp;&nbsp;z-index: -1;<br>
+        }
+      </div>
+
+      <div class="explain">
+        <strong>সহজ ভাষায়:</strong><br><br>
+        <strong>isolation: isolate;</strong> বলছে —
+        “এই Card-এর ভিতরের layer-এর হিসাব Card-এর নিজের আলাদা
+        layering-এর মধ্যে রাখো।”<br><br>
+        তাই <strong>::before</strong>-এর layer বাইরে থাকা element-এর
+        stacking-এর সাথে সহজে মিশে যায় না।
+      </div>
+    </section>
+
+    <section class="box">
+      <h2>মনে রাখার সূত্র 🧠</h2>
+      <p><strong>isolate = আলাদা করা</strong></p>
+      <p><code>isolation: isolate;</code> = <strong>এই element-এর layering আলাদা করে দাও।</strong></p>
+    </section>
+  </main>
+
+  <script>
+    const scene = document.getElementById('scene');
+    const button = document.getElementById('toggleButton');
+    const status = document.getElementById('status');
+
+    button.addEventListener('click', () => {
+      scene.classList.toggle('is-off');
+      const isOff = scene.classList.contains('is-off');
+      button.textContent = isOff ? 'Isolation ON করে দেখো' : 'Isolation OFF করে দেখো';
+      status.innerHTML = isOff
+        ? 'এখন <strong>isolation: isolate;</strong> OFF আছে।'
+        : 'এখন <strong>isolation: isolate;</strong> ON আছে।';
+    });
+  </script>
+</body>
+</html>
