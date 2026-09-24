@@ -1,0 +1,110 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --page: #0b0d10;
+  --surface: #14171c; /* nei */
+  --surface-soft: rgba(
+    255,
+    255,
+    255,
+    0.04
+  ); /*  skill box */
+
+  --text: #f4f5f7;
+  --muted: #a4aab4; /* নামের নিচে স্কিলের নিচে */
+  --line: rgba(255, 255, 255, 0.1);
+  /* --line : blue; */
+  --accent: #d8ff52;
+  --accent-ink: #111500; /* rt*/
+  /* --accent-ink: red; */
+
+  --shadow: 0 30px 80px rgba(0, 0, 0, 0.4);
+  --radius-lg: 32px;
+  --radius-md: 18px; /* skill box */
+  --content-width: 720px;
+}
+body {
+  min-height: 100vh;
+  font-family: "Manrope", sans-serif;
+
+  color: var(--text);
+
+  background:
+    radial-gradient(
+      circle at 20% 15%,
+      rgba(216, 255, 82, 0.08),
+      transparent 28%
+    ),
+    radial-gradient(
+        circle at 80% 90%,
+        rgba(95, 120, 255, 0.08),
+        transparent 30%
+      )
+      var(--page);
+}
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(
+    rgba(255, 255, 255, 0.12) 0.6px,
+    transparent 0.6px
+  );
+  background-size: 5px 5px;
+
+  mask-image: linear-gradient(
+    to bottom,
+    black,
+    transparent 85%
+  );
+  pointer-events: none;
+  opacity: 0.26;
+}
+.page-body {
+  border: 2px solid red;
+  width: min(100% - 36px, 880px);
+  min-height: 100vh;
+  margin: 0 auto;
+  /* padding: 48px; */
+  text-align: justify;
+  padding: 48px 0 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.main-card-frame {
+  position: relative;
+  width: min(100%, 720px);
+  /* border: 2px solid blue; */
+  /* overflow: hidden; */
+  padding: clamp(24px, 5vw, 48px);
+  border-radius: 32px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.08),
+    rgba(255, 255, 255, 0.025)
+  );
+  box-shadow: 0 30px 80px rgba(73, 70, 70, 0.274);
+  isolation: isolate;
+}
+.card-glow {
+  position: absolute;
+  width: 220px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+}
+
+.card-glow-one {
+  top: -120px;
+  right: -70px;
+  background-color: #d8ff52;
+}
+.card-glow-two{
+  
+}

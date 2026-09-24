@@ -88,7 +88,7 @@ a {
 }
 /* ................  xxx  .......................          */
 .page-shell {
-  border: 5px solid red;
+  /* border: 5px solid red; */
 
   width: min(100% - 36px, 880px);
   min-height: 100vh;
@@ -106,8 +106,9 @@ a {
   position: relative;
   width: min(100%, var(--content-width));
   overflow: hidden;
+
   padding: clamp(24px, 5vw, 48px);
-  border: 5px solid blue;
+  /* border: 5px solid blue; */
   /* border: 1px solid var(--line); */
   border-radius: var(--radius-lg);
   background: linear-gradient(
@@ -124,6 +125,8 @@ a {
   width: 220px;
   aspect-ratio: 1;
   border-radius: 50%;
+
+  
   pointer-events: none;
   filter: blur(60px);
   opacity: 0.15;
@@ -143,7 +146,7 @@ a {
 }
 
 .profile-header {
-  border: 5px solid red;
+  /* border: 5px solid red; */
   display: grid;
   grid-template-columns: auto 1fr auto;
   align-items: center;
